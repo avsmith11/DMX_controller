@@ -28,7 +28,7 @@
   <ProjectSessionItem path="DMX_Controller;DMX_Controller;System Files"/>
  </Project>
  <Register1>
-  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="DMX_Controller_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
+  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal;ADC1/ISR;ADC1/IER;ADC1/CR;ADC1/CFGR;ADC1/CFGR2;ADC1/SMPR1;ADC1/SMPR2;ADC1/TR1;ADC1/TR2;ADC1/TR3;ADC1/SQR1;ADC1/SQR2;ADC1/SQR3;ADC1/SQR4;ADC1/DR;ADC1/JSQR;ADC1/OFR1;ADC1/OFR2;ADC1/OFR3;ADC1/OFR4;ADC1/JDR1;ADC1/JDR2;ADC1/JDR3;ADC1/JDR4;ADC1/AWD2CR;ADC1/AWD3CR;ADC1/DIFSEL;ADC1/CALFACT" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context;ADC1" name="DMX_Controller_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
  </Register1>
  <Register2>
   <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="DMX_Controller_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
@@ -58,11 +58,12 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="9" useTextEdit="1" path="source/main.c" left="0" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="38" useTextEdit="1" path="source/main.c" left="0" selected="1" top="12" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="5" y="13" useTextEdit="1" path="lib/STM32L432KC_FLASH.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="lib/STM32L432KC.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="228" useTextEdit="1" path="STM32L4xx/Source/STM32L4xx_Startup.s" left="0" top="207" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="23" y="53" useTextEdit="1" path="lib/STM32L432KC_ADC.c" left="0" top="18" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="268" useTextEdit="1" path="STM32L4xx/Source/STM32L4xx_Startup.s" left="0" top="234" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="15" useTextEdit="1" path="lib/STM32L432KC_ADC.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="40" y="76" useTextEdit="1" path="lib/STM32L432KC_ADC.c" left="0" top="42" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="DMX_Controller" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

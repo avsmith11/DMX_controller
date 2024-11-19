@@ -9,7 +9,8 @@
 
 void main(){
     // testing ADC functionality
-
+    //configureFlash();
+    //configureClock();
     gpioEnable(GPIO_PORT_A);
     gpioEnable(GPIO_PORT_B);
         
@@ -26,18 +27,14 @@ void main(){
 
     initADC();
 
+    volatile uint16_t adcValues[10];  // Array to store 10 ADC values
     while (1) {
-        printf("Value: %u\n", readCH6());
-    };
+      // Call the readADC function, passing the address of the array
+      readADC(&adcValues);
 
-    //uint16_t adcValues[9];  // Array to store 9 ADC values
-    //while (1) {
-    //  // Call the readADC function, passing the address of the array
-    //  readADC(adcValues);
-
-    //  // Print the ADC values
-    //  for (int i = 0; i < 9; i++) {
-    //      printf("ADC Value %d: %u\n", i, adcValues[i]);
-    //  };
-    //};
+      // Print the ADC values
+      for (int i = 0; i < 10; i++) {
+          printf("ADC Value %d: %u\n", i, adcValues[i]);
+      }
+    }
 }
