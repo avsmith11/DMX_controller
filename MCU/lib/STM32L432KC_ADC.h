@@ -10,6 +10,7 @@
 #include <stdint.h>
 #include <stm32l432xx.h>
 
-void adcEnable();
-uint32_t readADC(uint32_t adc_port);
+void initADC();
+void readADC(uint16_t * adcVals);
+uint16_t readCH6();
 #endif

@@ -36,8 +36,8 @@
 
 -------------------------- END-OF-HEADER -----------------------------
 
-File      : stm32l476xx_Vectors.s
-Purpose   : Exception and interrupt vectors for stm32l476xx devices.
+File      : stm32l432xx_Vectors.s
+Purpose   : Exception and interrupt vectors for stm32l432xx devices.
 
 Additional information:
   Preprocessor Definitions
@@ -216,7 +216,7 @@ _vectors:
         ISR_HANDLER DMA1_Channel5_IRQHandler
         ISR_HANDLER DMA1_Channel6_IRQHandler
         ISR_HANDLER DMA1_Channel7_IRQHandler
-        ISR_HANDLER ADC1_2_IRQHandler
+        ISR_HANDLER ADC1_IRQHandler
         ISR_HANDLER CAN1_TX_IRQHandler
         ISR_HANDLER CAN1_RX0_IRQHandler
         ISR_HANDLER CAN1_RX1_IRQHandler
@@ -224,34 +224,34 @@ _vectors:
         ISR_HANDLER EXTI9_5_IRQHandler
         ISR_HANDLER TIM1_BRK_TIM15_IRQHandler
         ISR_HANDLER TIM1_UP_TIM16_IRQHandler
-        ISR_HANDLER TIM1_TRG_COM_TIM17_IRQHandler
+        ISR_HANDLER TIM1_TRG_COM_IRQHandler
         ISR_HANDLER TIM1_CC_IRQHandler
         ISR_HANDLER TIM2_IRQHandler
-        ISR_HANDLER TIM3_IRQHandler
-        ISR_HANDLER TIM4_IRQHandler
+        ISR_RESERVED
+        ISR_RESERVED
         ISR_HANDLER I2C1_EV_IRQHandler
         ISR_HANDLER I2C1_ER_IRQHandler
-        ISR_HANDLER I2C2_EV_IRQHandler
-        ISR_HANDLER I2C2_ER_IRQHandler
+        ISR_RESERVED
+        ISR_RESERVED
         ISR_HANDLER SPI1_IRQHandler
-        ISR_HANDLER SPI2_IRQHandler
+        ISR_RESERVED
         ISR_HANDLER USART1_IRQHandler
         ISR_HANDLER USART2_IRQHandler
-        ISR_HANDLER USART3_IRQHandler
+        ISR_RESERVED
         ISR_HANDLER EXTI15_10_IRQHandler
         ISR_HANDLER RTC_Alarm_IRQHandler
-        ISR_HANDLER DFSDM1_FLT3_IRQHandler
-        ISR_HANDLER TIM8_BRK_IRQHandler
-        ISR_HANDLER TIM8_UP_IRQHandler
-        ISR_HANDLER TIM8_TRG_COM_IRQHandler
-        ISR_HANDLER TIM8_CC_IRQHandler
-        ISR_HANDLER ADC3_IRQHandler
-        ISR_HANDLER FMC_IRQHandler
-        ISR_HANDLER SDMMC1_IRQHandler
-        ISR_HANDLER TIM5_IRQHandler
+        ISR_RESERVED
+        ISR_RESERVED
+        ISR_RESERVED
+        ISR_RESERVED
+        ISR_RESERVED
+        ISR_RESERVED
+        ISR_RESERVED
+        ISR_RESERVED
+        ISR_RESERVED
         ISR_HANDLER SPI3_IRQHandler
-        ISR_HANDLER UART4_IRQHandler
-        ISR_HANDLER UART5_IRQHandler
+        ISR_RESERVED
+        ISR_RESERVED
         ISR_HANDLER TIM6_DAC_IRQHandler
         ISR_HANDLER TIM7_IRQHandler
         ISR_HANDLER DMA2_Channel1_IRQHandler
@@ -259,13 +259,13 @@ _vectors:
         ISR_HANDLER DMA2_Channel3_IRQHandler
         ISR_HANDLER DMA2_Channel4_IRQHandler
         ISR_HANDLER DMA2_Channel5_IRQHandler
-        ISR_HANDLER DFSDM1_FLT0_IRQHandler
-        ISR_HANDLER DFSDM1_FLT1_IRQHandler
-        ISR_HANDLER DFSDM1_FLT2_IRQHandler
+        ISR_RESERVED
+        ISR_RESERVED
+        ISR_RESERVED
         ISR_HANDLER COMP_IRQHandler
         ISR_HANDLER LPTIM1_IRQHandler
         ISR_HANDLER LPTIM2_IRQHandler
-        ISR_HANDLER OTG_FS_IRQHandler
+        ISR_HANDLER USB_IRQHandler
         ISR_HANDLER DMA2_Channel6_IRQHandler
         ISR_HANDLER DMA2_Channel7_IRQHandler
         ISR_HANDLER LPUART1_IRQHandler
@@ -273,13 +273,14 @@ _vectors:
         ISR_HANDLER I2C3_EV_IRQHandler
         ISR_HANDLER I2C3_ER_IRQHandler
         ISR_HANDLER SAI1_IRQHandler
-        ISR_HANDLER SAI2_IRQHandler
+        ISR_RESERVED
         ISR_HANDLER SWPMI1_IRQHandler
         ISR_HANDLER TSC_IRQHandler
-        ISR_HANDLER LCD_IRQHandler
+        ISR_RESERVED
         ISR_RESERVED
         ISR_HANDLER RNG_IRQHandler
         ISR_HANDLER FPU_IRQHandler
+        ISR_HANDLER CRS_IRQHandler
 #endif
         //
         .section .vectors, "ax"
