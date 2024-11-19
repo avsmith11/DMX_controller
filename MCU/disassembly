@@ -1,0 +1,261 @@
+--- main.c -- 20 -------------------------------------------
+pinMode(PA4, GPIO_ANALOG);
+pinMode(PA5, GPIO_ANALOG);
+pinMode(PA6, GPIO_ANALOG);
+pinMode(PA7, GPIO_ANALOG);
+pinMode(PB0, GPIO_ANALOG);
+    2010        movs r0, #16
+    F7FFF9C1    bl 0x080001BC <pinMode>
+    9903        ldr r1, [sp, #12]
+--- main.c -- 25 -------------------------------------------
+pinMode(PB1, GPIO_ANALOG);
+    2011        movs r0, #17
+    F7FFF9BD    bl 0x080001BC <pinMode>
+--- main.c -- 26 -------------------------------------------
+initADC();
+    F7FFFC1E    bl 0x08000682 <initADC>
+    F10D0016    add.w r0, sp, #22
+--- main.c -- 28 -------------------------------------------
+uint16_t adcValues[9]; // Array to store 9 ADC values
+while (1) {
+// Call the readADC function, passing the address of the array
+readADC(adcValues);
+    F7FFFE50    bl 0x08000AEE <readADC>
+--- main.c -- 33 -------------------------------------------
+// Print the ADC values
+for (int i = 0; i < 9; i++) {
+    2000        movs r0, #0
+    9004        str r0, [sp, #16]
+    9804        ldr r0, [sp, #16]
+    2808        cmp r0, #8
+    DC0E        bgt 0x08000E76
+--- main.c -- 36 -------------------------------------------
+printf("ADC Value %d: %u\n", i, adcValues[i]);
+    9904        ldr r1, [sp, #16]
+    F10D0016    add.w r0, sp, #22
+    F8302011    ldrh.w r2, [r0, r1, lsl #1]
+    F2412045    movw r0, #0x1245
+    F6C00000    movt r0, #0x0800
+    F000F8F7    bl 0x0800105C <printf>
+--- main.c -- 35 -------------------------------------------
+for (int i = 0; i < 9; i++) {
+    9804        ldr r0, [sp, #16]
+    3001        adds r0, #1
+    9004        str r0, [sp, #16]
+    E7ED        b 0x08000E52
+--- main.c -- 30 -------------------------------------------
+while (1) {
+    E7E6        b 0x08000E46
+--- STM32L4xx_Startup.s -- 124 -----------------------------
+#ifndef __NO_SYSTEM_INIT
+//
+// Call SystemInit
+//
+bl SystemInit
+    F7FFFF2A    bl 0x08000CD0 <SystemInit>
+--- STM32L4xx_Startup.s -- 171 -----------------------------
+#if !defined(__SOFTFP__) && !defined(__NO_FPU_ENABLE)
+//
+// Enable CP11 and CP10 with CPACR |= (0xf<<20)
+//
+movw R0, 0xED88 // CPACR
+    F64E5088    movw r0, #0xED88
+--- STM32L4xx_Startup.s -- 176 -----------------------------
+movt R0, 0xE000
+    F2CE0000    movt r0, #0xE000
+--- STM32L4xx_Startup.s -- 177 -----------------------------
+ldr R1, [R0]
+    6801        ldr r1, [r0]
+--- STM32L4xx_Startup.s -- 178 -----------------------------
+orrs R1, R1, #(0xf << 20)
+    F4510170    orrs r1, r1, #0xF00000
+--- STM32L4xx_Startup.s -- 179 -----------------------------
+str R1, [R0]
+    6001        str r1, [r0]
+--- STM32L4xx_Startup.s -- 180 -----------------------------
+#endif
+//
+// Call runtime initialization, which calls main().
+//
+bl _start
+    F7FFF9E6    bl 0x0800025C <_start>
+<__SEGGER_RTL_ascii_mbtowc>
+    4684        mov r12, r0
+    2000        movs r0, #0
+    2900        cmp r1, #0
+    BF18        it ne
+    2A00        cmpne r2, #0
+    D100        bne 0x08000E9E
+    4770        bx lr
+    7809        ldrb r1, [r1]
+    B248        sxtb r0, r1
+    2800        cmp r0, #0
+    BF44        itt mi
+    F06F0001    mvnmi r0, #1
+    4770        bxmi lr
+    F1BC0F00    cmp.w r12, #0
+    BF18        it ne
+    F8CC1000    strne.w r1, [r12, #0]
+    2100        movs r1, #0
+    E9C31100    strd r1, r1, [r3, #0]
+    2800        cmp r0, #0
+    BF18        it ne
+    2001        movne r0, #1
+    4770        bx lr
+<__SEGGER_RTL_ascii_isctype>
+    287F        cmp r0, #0x7F
+    BF84        itt hi
+    2000        movhi r0, #0
+    4770        bxhi lr
+    F24122F6    movw r2, #0x12F6
+    F6C00200    movt r2, #0x0800
+    5C51        ldrb r1, [r2, r1]
+    F2413234    movw r2, #0x1334
+    F6C00200    movt r2, #0x0800
+    5C10        ldrb r0, [r2, r0]
+    4008        ands r0, r1
+    4770        bx lr
+<__SEGGER_RTL_ascii_toupper>
+    F1A00161    sub.w r1, r0, #0x61
+    291A        cmp r1, #26
+    BF38        it cc
+    3820        subcc r0, #32
+    4770        bx lr
+<__SEGGER_RTL_ascii_tolower>
+    F1A00141    sub.w r1, r0, #0x41
+    291A        cmp r1, #26
+    BF38        it cc
+    3020        addcc r0, #32
+    4770        bx lr
+<__SEGGER_RTL_ascii_iswctype>
+    287F        cmp r0, #0x7F
+    BF84        itt hi
+    2000        movhi r0, #0
+    4770        bxhi lr
+    F24122F6    movw r2, #0x12F6
+    F6C00200    movt r2, #0x0800
+    5C51        ldrb r1, [r2, r1]
+    F2413234    movw r2, #0x1334
+    F6C00200    movt r2, #0x0800
+    5C10        ldrb r0, [r2, r0]
+    4008        ands r0, r1
+    4770        bx lr
+<__SEGGER_RTL_ascii_towupper>
+    F1A00161    sub.w r1, r0, #0x61
+    291A        cmp r1, #26
+    BF38        it cc
+    3820        subcc r0, #32
+    4770        bx lr
+<__SEGGER_RTL_ascii_towlower>
+    F1A00141    sub.w r1, r0, #0x41
+    291A        cmp r1, #26
+    BF38        it cc
+    3020        addcc r0, #32
+    4770        bx lr
+<__SEGGER_RTL_putc>
+    B510        push {r4, lr}
+    B082        sub sp, sp, #8
+    4604        mov r4, r0
+    6900        ldr r0, [r0, #16]
+    F88D1007    strb.w r1, [sp, #7]
+    B178        cbz r0, 0x08000F62
+    E9D42300    ldrd r2, r3, [r4, #0]
+    429A        cmp r2, r3
+    D231        bcs 0x08000FAE
+    6962        ldr r2, [r4, #20]
+    1C53        adds r3, r2, #1
+    6163        str r3, [r4, #20]
+    5481        strb r1, [r0, r2]
+    E9D40105    ldrd r0, r1, [r4, #20]
+    4288        cmp r0, r1
+    D129        bne 0x08000FAE
+    4620        mov r0, r4
+    F000F82C    bl 0x08000FB8 <__SEGGER_RTL_prin_flush>
+    E025        b 0x08000FAE
+    68E0        ldr r0, [r4, #12]
+    B150        cbz r0, 0x08000F7C
+    E9D42C00    ldrd r2, r12, [r4, #0]
+    4562        cmp r2, r12
+    D21F        bcs 0x08000FAE
+    1C53        adds r3, r2, #1
+    EBB3030C    subs.w r3, r3, r12
+    BF18        it ne
+    460B        movne r3, r1
+    5483        strb r3, [r0, r2]
+    E018        b 0x08000FAE
+    68A0        ldr r0, [r4, #8]
+    B158        cbz r0, 0x08000F98
+    E9D42C00    ldrd r2, r12, [r4, #0]
+    4562        cmp r2, r12
+    D212        bcs 0x08000FAE
+    1C53        adds r3, r2, #1
+    EBB3030C    subs.w r3, r3, r12
+    BF18        it ne
+    B2CB        uxtbne r3, r1
+    F8403022    str.w r3, [r0, r2, lsl #2]
+    E00A        b 0x08000FAE
+    6A23        ldr r3, [r4, #32]
+    B143        cbz r3, 0x08000FAE
+    E9D40100    ldrd r0, r1, [r4, #0]
+    4288        cmp r0, r1
+    D204        bcs 0x08000FAE
+    F10D0107    add.w r1, sp, #7
+    4620        mov r0, r4
+    2201        movs r2, #1
+    4798        blx r3
+    6820        ldr r0, [r4]
+    3001        adds r0, #1
+    6020        str r0, [r4]
+    B002        add sp, sp, #8
+    BD10        pop {r4, pc}
+<__SEGGER_RTL_prin_flush>
+    B510        push {r4, lr}
+    6942        ldr r2, [r0, #20]
+    2A00        cmp r2, #0
+    BF08        it eq
+    BD10        popeq {r4, pc}
+    4604        mov r4, r0
+    6A03        ldr r3, [r0, #32]
+    2B00        cmp r3, #0
+    BF1C        itt ne
+    6921        ldrne r1, [r4, #16]
+    4798        blxne r3
+    2000        movs r0, #0
+    6160        str r0, [r4, #20]
+    BD10        pop {r4, pc}
+<vfprintf>
+    B570        push {r4-r6, lr}
+    4614        mov r4, r2
+    460D        mov r5, r1
+    4606        mov r6, r0
+    F7FFFE14    bl 0x08000C08 <__SEGGER_RTL_current_locale>
+    4601        mov r1, r0
+    4630        mov r0, r6
+    462A        mov r2, r5
+    4623        mov r3, r4
+    E8BD4070    pop.w {r4-r6, lr}
+    F000B800    b.w 0x08000FF0 <vfprintf_l>
+<vfprintf_l>
+    E92D4FF0    push.w {r4-r11, lr}
+    AF03        add r7, sp, #12
+    B08D        sub sp, sp, #0x34
+    F8473C3C    str r3, [r7, #-0x3C]
+    4691        mov r9, r2
+    460E        mov r6, r1
+    4604        mov r4, r0
+    F000F85D    bl 0x080010C0 <__SEGGER_RTL_X_file_bufsize>
+    4605        mov r5, r0
+    46EB        mov r11, sp
+    3007        adds r0, #7
+    F0200007    bic r0, r0, #7
+    EBAD0800    sub r8, sp, r0
+    46C5        mov sp, r8
+    F1A70A38    sub.w r10, r7, #0x38
+    4650        mov r0, r10
+    2100        movs r1, #0
+    2224        movs r2, #0x24
+    F7FFFA46    bl 0x080004B0 <memset>
+    F6404031    movw r0, #0x0C31
+    F6C00000    movt r0, #0x0800
+    E9476007    strd r6, r0, [r7, #-28]
+    F06F4000    mvn r0, #0x80000000
