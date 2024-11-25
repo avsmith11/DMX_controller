@@ -1,5 +1,6 @@
 // STM32L432KC_USART.c
 // Source code for USART functions
+// MODIFIED for this project to meet DMX specs 11/21/24
 
 #include "STM32L432KC.h"
 #include "STM32L432KC_USART.h"
@@ -32,11 +33,12 @@ USART_TypeDef * initUSART(int USART_ID, int baud_rate) {
             RCC->APB2ENR |= RCC_APB2ENR_USART1EN; // Set USART1EN
             RCC->CCIPR |= (0b10 << RCC_CCIPR_USART1SEL_Pos); // Set HSI16 (16 MHz) as USART clock source
 
-            GPIOA->AFR[1] |= (0b111 << GPIO_AFRH_AFSEL9_Pos) | (0b111 << GPIO_AFRH_AFSEL10_Pos);
+            GPIOA->AFR[1] |= (0b111 << GPIO_AFRH_AFSEL9_Pos); 
+            // GPIO->AR[1] |= (0b111 << GPIO_AFRH_AFSEL10_Pos);
 
             // Configure pin modes as ALT function
             pinMode(PA9, GPIO_ALT); // TX
-            pinMode(PA10, GPIO_ALT); // RX
+            //pinMode(PA10, GPIO_ALT); // RX
 
             break;
         case USART2_ID :
@@ -56,7 +58,7 @@ USART_TypeDef * initUSART(int USART_ID, int baud_rate) {
     // Set M = 00
     USART->CR1 &= ~(USART_CR1_M0 | USART_CR1_M1);    // M=00 corresponds to 1 start bit, 8 data bits, n stop bits
     USART->CR1 &= ~USART_CR1_OVER8; // Set to 16 times sampling freq
-    USART->CR2 &= ~USART_CR2_STOP;  // 0b00 corresponds to 1 stop bit
+    USART->CR2 |= (0b10 << USART_CR2_STOP_Pos);  // 0b10 corresponds to 2 stop bits
 
     // Set baud rate to 115200 (see RM 38.5.4 for details)
     // Tx/Rx baud = f_CK/USARTDIV (since oversampling by 16)
@@ -64,26 +66,24 @@ USART_TypeDef * initUSART(int USART_ID, int baud_rate) {
 
     USART->BRR = (uint16_t) (HSI_FREQ / baud_rate);
 
-    USART->CR1 |= USART_CR1_UE;     // Enable USART
-    USART->CR1 |= USART_CR1_TE | USART_CR1_RE; // Enable transmission and reception
+    USART->CR1 |= USART_CR1_UE; // Enable USART
+    USART->CR1 |= USART_CR1_TE; // Enable transmission 
 
     return USART;
 }
 
 void sendChar(USART_TypeDef * USART, char data){
-    while(!(USART->ISR & USART_ISR_TXE));
+    while(!(USART->ISR & USART_ISR_TXE)); 
     USART->TDR = data;
     while(!(USART->ISR & USART_ISR_TC));
 }
 
-void sendString(USART_TypeDef * USART, char * charArray){
+void sendString(USART_TypeDef * USART, char * charArray, int length){
 
-    uint32_t i = 0;
-    do{
+    for (int i = 0; i < length; i++) {
         sendChar(USART, charArray[i]);
-        i++;
     }
-    while(charArray[i] != 0);
+
 }
 
 char readChar(USART_TypeDef * USART) {

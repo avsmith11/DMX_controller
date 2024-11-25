@@ -19,7 +19,7 @@ USART_TypeDef * id2Port(int USART_ID);
 USART_TypeDef * initUSART(int USART_ID, int baud_rate);
 void sendChar(USART_TypeDef * USART, char data);
 char readChar(USART_TypeDef * USART);
-void sendString(USART_TypeDef * USART, char * charArray);
+void sendString(USART_TypeDef * USART, char * charArray, int length);
 void readString(USART_TypeDef * USART, char * charArray);
 
 #endif

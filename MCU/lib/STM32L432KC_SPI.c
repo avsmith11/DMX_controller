@@ -20,9 +20,8 @@ void initSPI(int br, int cpol, int cpha) {
 
     // Initially assigning SPI pins
     pinMode(SPI_SCK, GPIO_ALT); // SPI1_SCK
-    pinMode(SPI_MISO, GPIO_ALT); // SPI1_MISO
+    // pinMode(SPI_MISO, GPIO_ALT); // SPI1_MISO
     pinMode(SPI_MOSI, GPIO_ALT); // SPI1_MOSI
-    pinMode(SPI_CE, GPIO_OUTPUT); //  Manual CS
 
     // Set output speed type to high for SCK
     GPIOB->OSPEEDR |= (GPIO_OSPEEDR_OSPEED3);
@@ -53,4 +52,9 @@ char spiSendReceive(char send) {
     while(!(SPI1->SR & SPI_SR_RXNE)); // Wait until data has been received
     char rec = (volatile char) SPI1->DR;
     return rec; // Return received character
+}
+
+char spiSend(char send) {
+    while(!(SPI1->SR & SPI_SR_TXE)); // Wait until the transmit buffer is empty
+    *(volatile char *) (&SPI1->DR) = send; // Transmit the character over SPI
 }

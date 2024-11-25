@@ -11,6 +11,6 @@
 #include <stm32l432xx.h>
 
 void initADC();
-void readADC(uint16_t * adcVals);
+void readADC(volatile uint16_t * adcVals);
 uint16_t readCH6();
 #endif

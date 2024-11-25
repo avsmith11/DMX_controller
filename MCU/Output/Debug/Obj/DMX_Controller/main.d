@@ -21,4 +21,5 @@ Output/Debug/Obj/DMX_Controller/main.o: \
   C:\Users\oaksh\Desktop\E155\DMX_controller\MCU\source\..\lib\STM32L432KC_FLASH.h \
   C:\Users\oaksh\Desktop\E155\DMX_controller\MCU\source\..\lib\STM32L432KC_USART.h \
   C:\Users\oaksh\Desktop\E155\DMX_controller\MCU\source\..\lib\STM32L432KC_SPI.h \
-  C:\Users\oaksh\Desktop\E155\DMX_controller\MCU\source\..\lib\STM32L432KC_ADC.h
+  C:\Users\oaksh\Desktop\E155\DMX_controller\MCU\source\..\lib\STM32L432KC_ADC.h \
+  C:\Program\ Files\SEGGER\SEGGER\ Embedded\ Studio\ 8.10b\include\string.h

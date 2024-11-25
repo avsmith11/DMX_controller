@@ -7,8 +7,6 @@
 #include <stdint.h>
 #include <stm32l432xx.h>
 
-
-#define SPI_CE PA11
 #define SPI_SCK PB3
 #define SPI_MOSI PB5
 #define SPI_MISO PB4
@@ -30,4 +28,6 @@ void initSPI(int br, int cpol, int cpha);
  *    -- return: the character received over SPI */
 char spiSendReceive(char send);
 
+// Transmits a char over SPI (does not wait for recieve);
+void spiSend(char send);
 #endif

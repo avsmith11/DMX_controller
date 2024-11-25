@@ -88,6 +88,26 @@ void pinMode(int gpio_pin, int function) {
 	}
 }
 
+void AFselect(int gpio_pin, int alternateFunction) {
+	// Use in addition to pinMode to set alternate function
+	// Get pointer to base address of the corresponding GPIO pin and pin offset
+	GPIO_TypeDef * GPIO_PORT_PTR = gpioPinToBase(gpio_pin);
+	int pin_offset = gpioPinOffset(gpio_pin);
+
+	if (pin_offset <= 7) {
+		// reset AF for gpio_pin
+		GPIO_PORT_PTR->AFR[0] &= ~(0b1111 << 4*pin_offset);
+		// set alternate function
+		GPIO_PORT_PTR->AFR[0] |= (alternateFunction << 4*pin_offset);
+		}
+	else {
+		//reset AF for gpio_pin
+		GPIO_PORT_PTR->AFR[1] &= ~(0b1111 << 4*(pin_offset-8));
+		//set alterate function
+		GPIO_PORT_PTR->AFR[1] |= (alternateFunction << 4*(pin_offset-8));
+	}
+}
+
 int digitalRead(int gpio_pin) {
 	// Get pointer to base address of the corresponding GPIO pin and pin offset
 	GPIO_TypeDef * GPIO_PORT_PTR = gpioPinToBase(gpio_pin);

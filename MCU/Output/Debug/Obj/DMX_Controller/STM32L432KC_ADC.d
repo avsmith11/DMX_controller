@@ -13,4 +13,5 @@ Output/Debug/Obj/DMX_Controller/STM32L432KC_ADC.o: \
   C:\Users\oaksh\Desktop\E155\DMX_controller\MCU\CMSIS_5\CMSIS\Core\Include\cmsis_gcc.h \
   C:\Users\oaksh\Desktop\E155\DMX_controller\MCU\CMSIS_5\CMSIS\Core\Include\mpu_armv7.h \
   C:\Users\oaksh\Desktop\E155\DMX_controller\MCU\STM32L4xx\Device\Include\system_stm32l4xx.h \
-  C:\Users\oaksh\Desktop\E155\DMX_controller\MCU\lib\STM32L432KC_ADC.h
+  C:\Users\oaksh\Desktop\E155\DMX_controller\MCU\lib\STM32L432KC_ADC.h \
+  C:\Users\oaksh\Desktop\E155\DMX_controller\MCU\lib\STM32L432KC_GPIO.h

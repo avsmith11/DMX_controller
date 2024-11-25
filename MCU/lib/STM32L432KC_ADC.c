@@ -7,9 +7,24 @@
 
 #include "STM32L432KC_RCC.h"
 #include "STM32L432KC_ADC.h"
+#include "STM32L432KC_GPIO.h"
 
 void initADC() {
     // initialize ADC
+
+    gpioEnable(GPIO_PORT_A);
+    gpioEnable(GPIO_PORT_B);
+        
+    pinMode(PA0, GPIO_ANALOG);
+    pinMode(PA1, GPIO_ANALOG);
+    pinMode(PA2, GPIO_ANALOG);
+    pinMode(PA3, GPIO_ANALOG);
+    pinMode(PA4, GPIO_ANALOG);
+    pinMode(PA5, GPIO_ANALOG);
+    pinMode(PA6, GPIO_ANALOG);
+    pinMode(PA7, GPIO_ANALOG);
+    pinMode(PB0, GPIO_ANALOG);
+    pinMode(PB1, GPIO_ANALOG);
 
     RCC -> AHB2ENR |= RCC_AHB2ENR_ADCEN; // enable clock to ADC
 
@@ -61,7 +76,7 @@ void initADC() {
     return;
 };
 
-void readADC(uint16_t * adcVals) {
+void readADC(volatile uint16_t * adcVals) {
     // start conversion sequence
     ADC1->CR |= ADC_CR_ADSTART;
     // read ADC values
