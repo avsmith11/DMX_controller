@@ -54,7 +54,7 @@ char spiSendReceive(char send) {
     return rec; // Return received character
 }
 
-char spiSend(char send) {
+void spiSend(char send) {
     while(!(SPI1->SR & SPI_SR_TXE)); // Wait until the transmit buffer is empty
     *(volatile char *) (&SPI1->DR) = send; // Transmit the character over SPI
 }

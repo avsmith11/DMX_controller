@@ -29,7 +29,7 @@
 void testADC();
 void sendDMX(volatile char * paramValues);
 char uint12_to_char(uint16_t value);
-void sendSPItoMCU(char value1, char value2)
+void sendSPItoMCU(char value1, char value2);
 
 void main(){
     // testing ADC functionality
@@ -74,7 +74,7 @@ void main(){
             }
         }
         sendDMX(&paramValues);
-        sendSPItoMCU(activeValue, activeParam)
+        sendSPItoMCU(activeValue, activeParam);
         delay_millis(TIM6, 100);
     }
     
