@@ -1,0 +1,9 @@
+---------------------------------------------------
+Report for cell send_FSM
+   Instance path: send_FSM
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         14        100.0
+                               LUTGATE	         14        100.0
+                                 IOBUF	         25        100.0
+                                PFUREG	          4        100.0
