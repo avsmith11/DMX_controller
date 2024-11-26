@@ -52,7 +52,7 @@ void main(){
     volatile char activeParam;
     volatile char activeValue;
 
-
+    //testADC(); // PB0 (chan 8) is not responing to changing inputs. idk why.
     while(1){
         // shift paramValues to lastParamValues
         // read ADC
@@ -62,16 +62,17 @@ void main(){
         // send parameters to FPGA over SPI
         // wait 100ms.
 
-        readADC(&adcValues);
+        readADC(&adcValues); 
         
         for (int i = 0; i < 10; i++) {
             paramValues[i] = uint12_to_char(adcValues[i]);
             printf("adc %u: %u -> %u\n", i+1, adcValues[i], paramValues[i]);
 
-            if ((i > 5) & (i < 6 ) & (lastParamValues[i] != paramValues[i])){  // check which value changed and set activeValue, activeParam TODO: remove case on i once full implementation complete
+            if (lastParamValues[i] != paramValues[i]){  // check which value changed and set activeValue, activeParam TODO: remove case on i once full implementation complete
                 activeValue = paramValues[i];
                 activeParam = i+1;
             }
+            lastParamValues[i] = paramValues[i]; // send param values to last param values
         }
         sendDMX(&paramValues);
         sendSPItoMCU(activeValue, activeParam);
@@ -84,6 +85,7 @@ void testADC() {
     volatile uint16_t adcValues[10];  // Array to store 10 ADC values
     while (1) {
       // Call the readADC function, passing the address of the array
+      for (int i = 0; i < 100; i++) delay_millis(TIM6, 10);
       readADC(&adcValues);
 
       // Print the ADC values
