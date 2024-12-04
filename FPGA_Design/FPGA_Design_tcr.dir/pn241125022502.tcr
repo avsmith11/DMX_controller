@@ -1,0 +1,22 @@
+#Start recording tcl command: 11/19/2024 15:12:18
+#Project Location: C:/Users/hheathwood/Desktop/Project/FPGA_Design; Project name: FPGA_Design
+prj_open "C:/Users/hheathwood/Desktop/Project/FPGA_Design/FPGA_Design.rdf"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+#Stop recording: 11/25/2024 02:25:02
