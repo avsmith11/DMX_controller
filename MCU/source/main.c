@@ -63,20 +63,21 @@ void main(){
         // wait 100ms.
 
         readADC(&adcValues); 
+
         
         for (int i = 0; i < 10; i++) {
             paramValues[i] = uint12_to_char(adcValues[i]);
             printf("adc %u: %u -> %u\n", i+1, adcValues[i], paramValues[i]);
 
-            if (lastParamValues[i] != paramValues[i]){  // check which value changed and set activeValue, activeParam TODO: remove case on i once full implementation complete
+            if (lastParamValues[i] != paramValues[i]){  // check which value changed and set activeValue, activeParam
                 activeValue = paramValues[i];
                 activeParam = i+1;
             }
             lastParamValues[i] = paramValues[i]; // send param values to last param values
         }
+
         sendDMX(&paramValues);
         sendSPItoMCU(activeValue, activeParam);
-        delay_millis(TIM6, 100);
     }
     
 }
