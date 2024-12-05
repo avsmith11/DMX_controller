@@ -33,7 +33,7 @@ void initADC() {
     ADC1->CR &= ~ADC_CR_DEEPPWD; //Exit Deep power 
     ADC1->CR |= ADC_CR_ADVREGEN; //Enable ADC internal voltage regulator
 
-    ADC1 -> SQR1 |= 0xb << ADC_SQR1_L_Pos;
+    ADC1 -> SQR1 |= 0xa << ADC_SQR1_L_Pos;
 
                                                   //////////////////////////////
                                                   //  index | channel | pin   //
