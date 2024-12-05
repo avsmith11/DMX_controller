@@ -86,6 +86,13 @@ void sendString(USART_TypeDef * USART, char * charArray, int length){
 
 }
 
+void sendStringWithSpace(USART_TypeDef * USART, char * charArray, int length, int usBetweenSlots){
+    for (int i = 0; i < length; i++) {
+        sendChar(USART, charArray[i]);
+        delay_micros(TIM6, usBetweenSlots);
+    }
+}
+
 char readChar(USART_TypeDef * USART) {
         char data = USART->RDR;
         return data;

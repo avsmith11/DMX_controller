@@ -33,21 +33,20 @@ void initADC() {
     ADC1->CR &= ~ADC_CR_DEEPPWD; //Exit Deep power 
     ADC1->CR |= ADC_CR_ADVREGEN; //Enable ADC internal voltage regulator
 
-    ADC1 -> SQR1 |= 0xa << ADC_SQR1_L_Pos;
+    ADC1 -> SQR1 |= 0x9 << ADC_SQR1_L_Pos;
 
                                                   //////////////////////////////
                                                   //  index | channel | pin   //
-    // configure for 10 conversions               //  ---------------------   //
+    // configure for 9 conversions               //  ---------------------   //
     ADC1 -> SQR1 |= (0x5 << ADC_SQR1_SQ1_Pos);    //  0     | 5       | PA0   //
     ADC1 -> SQR1 |= (0x6 << ADC_SQR1_SQ2_Pos);    //  1     | 6       | PA1   //
     ADC1 -> SQR1 |= (0x7 << ADC_SQR1_SQ3_Pos);    //  2     | 7       | PA2   //
     ADC1 -> SQR1 |= (0x8 << ADC_SQR1_SQ4_Pos);    //  3     | 8       | PA3   //
     ADC1 -> SQR2 |= (0x9 << ADC_SQR2_SQ5_Pos);    //  4     | 9       | PA4   //
-    ADC1 -> SQR2 |= (0xa << ADC_SQR2_SQ6_Pos);    //  5     | 10      | PA5   //
-    ADC1 -> SQR2 |= (0xb << ADC_SQR2_SQ7_Pos);    //  6     | 11      | PA6   //
-    ADC1 -> SQR2 |= (0xc << ADC_SQR2_SQ8_Pos);    //  7     | 12      | PA7   //
-    ADC1 -> SQR2 |= (0xf << ADC_SQR2_SQ9_Pos);    //  8     | 15      | PB0   //
-    ADC1 -> SQR3 |= (0x10 << ADC_SQR3_SQ10_Pos);  //  9     | 16      | PB1   //
+    ADC1 -> SQR2 |= (0xb << ADC_SQR2_SQ6_Pos);    //  5     | 11      | PA6   //
+    ADC1 -> SQR2 |= (0xc << ADC_SQR2_SQ7_Pos);    //  6     | 12      | PA7   //
+    ADC1 -> SQR2 |= (0xf << ADC_SQR2_SQ8_Pos);    //  7     | 15      | PB0   //
+    ADC1 -> SQR2 |= (0x10 << ADC_SQR2_SQ9_Pos);   //  8     | 16      | PB1   //
                                                   //////////////////////////////
 
     // set sample time to maximum
@@ -56,7 +55,6 @@ void initADC() {
     ADC1  -> SMPR1 |= (0b111 << ADC_SMPR1_SMP7_Pos);
     ADC1  -> SMPR1 |= (0b111 << ADC_SMPR1_SMP8_Pos);
     ADC1  -> SMPR1 |= (0b111 << ADC_SMPR1_SMP9_Pos);
-    ADC1  -> SMPR2 |= (0b111 << ADC_SMPR2_SMP10_Pos);
     ADC1  -> SMPR2 |= (0b111 << ADC_SMPR2_SMP11_Pos);
     ADC1  -> SMPR2 |= (0b111 << ADC_SMPR2_SMP12_Pos);
     ADC1  -> SMPR2 |= (0b111 << ADC_SMPR2_SMP15_Pos);

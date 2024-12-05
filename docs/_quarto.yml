@@ -1,0 +1,26 @@
+project:
+  type: website
+
+website:
+  title: "E155 Final Project Portfolio Website"
+  navbar:
+    tools:
+      - icon: github
+        href: https://github.com/HMC-E155/final-project-portfolio
+    left:
+      - href: index.qmd
+        text: Home
+      - href: documentation.qmd 
+      - href: fpga-design.qmd
+      - href: mcu-design.qmd
+      - href: results.qmd
+      - href: team.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.scss
+    toc: true
+
+
+

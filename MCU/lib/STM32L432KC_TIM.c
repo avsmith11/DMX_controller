@@ -18,7 +18,7 @@ void initTIM(TIM_TypeDef * TIMx){
 }
 
 void delay_micros(TIM_TypeDef * TIMx, uint32_t us){
-  TIMx->ARR = us;// Set timer max count
+  TIMx->ARR = us;// Set timer
   TIMx->EGR |= 1;     // Force update
   TIMx->SR &= ~(0x1); // Clear UIF
   TIMx->CNT &= 0; // Reset counts
@@ -26,15 +26,23 @@ void delay_micros(TIM_TypeDef * TIMx, uint32_t us){
   while(!(TIMx->SR & 1)); // Wait for UIF to go high
 }
 
-void alt_delay_micros(TIM_TypeDef * TIMx, uint32_t us){
-  TIMx->CNT &= ~(0xFFFF << 0); // Reset counts
-  while(TIMx->CNT < us); // Wait for UIF to go high
-}
 void delay_millis(TIM_TypeDef * TIMx, uint32_t ms){
-  TIMx->ARR = ms * 1000;// Set timer max count
+  TIMx->ARR = ms * 1000;// Set timer
   TIMx->EGR |= 1;     // Force update
   TIMx->SR &= ~(0x1); // Clear UIF
   TIMx->CNT = 0;      // Reset count
 
   while(!(TIMx->SR & 1)); // Wait for UIF to go high
+}
+
+void reset_timer(TIM_TypeDef * TIMx) {
+  TIMx->ARR = 0XFFFF;   // Set ARR to max
+  TIMx->EGR |= 1;     // Force update
+  TIMx->SR &= ~(0x1); // Clear UIF
+  TIMx->CNT = 0;      // Reset count  
+}
+
+uint16_t read_timer(TIM_TypeDef * TIMx) {
+  TIMx->CR1 &= ~1;
+  return TIMx->CNT; // read timer value
 }

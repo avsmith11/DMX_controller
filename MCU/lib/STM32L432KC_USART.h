@@ -20,6 +20,7 @@ USART_TypeDef * initUSART(int USART_ID, int baud_rate);
 void sendChar(USART_TypeDef * USART, char data);
 char readChar(USART_TypeDef * USART);
 void sendString(USART_TypeDef * USART, char * charArray, int length);
+void sendStringWithSpace(USART_TypeDef * USART, char * charArray, int length, int usBetweenSlots);
 void readString(USART_TypeDef * USART, char * charArray);
 
 #endif

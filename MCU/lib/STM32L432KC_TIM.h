@@ -14,5 +14,7 @@
 void initTIM(TIM_TypeDef * TIMx);
 void delay_millis(TIM_TypeDef * TIMx, uint32_t ms);
 void delay_micros(TIM_TypeDef * TIMx, uint32_t us);
+void reset_timer(TIM_TypeDef * TIMx);
+uint16_t read_timer(TIM_TypeDef * TIMx);
 
 #endif

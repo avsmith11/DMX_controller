@@ -1,0 +1,9 @@
+---
+title: Team
+---
+
+# Avery Smith
+![images/Avery Headshot.jpg]
+## Mudd '26
+[LinkedIn](https://www.linkedin.com/in/avery-smith-434ab4262/)
+In addition to engineering, Avery has a concentration in theatre and is currently in a lighting class. He wanted to combine these interests in a cool project.
