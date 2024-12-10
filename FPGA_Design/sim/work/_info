@@ -1,0 +1,191 @@
+m255
+K4
+z2
+!s11f vlog 2021.4 2021.10, Oct 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/lscc/radiant/3.2/modeltech/win32loem
+vclk_divider
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1733417134
+!i10b 1
+!s100 Yo6f3FRaZH]WTkFA2kdSO0
+I=B6iF8ADiOO^[0ajWH6PN3
+S1
+Z2 dC:/Users/hheathwood/Desktop/Project/FPGA_Design/sim
+w1733403445
+8C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/clk_divider.sv
+FC:/Users/hheathwood/Desktop/Project/FPGA_Design/source/clk_divider.sv
+!i122 128
+L0 6 18
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OT;L;2021.4;73
+r1
+!s85 0
+31
+Z5 !s108 1733417134.000000
+!s107 C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/clk_divider.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/clk_divider.sv|
+!s101 -O0
+!i113 1
+Z6 o-work work -sv -O0
+Z7 tCvgOpt 0
+vcontrol_FSM
+R0
+R1
+!i10b 1
+!s100 fIbzZO<2AEkVjN6_1j:2c3
+I[YX^l=k7Di190?HFoUDgG1
+S1
+R2
+w1733415841
+8C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/control_FSM.sv
+FC:/Users/hheathwood/Desktop/Project/FPGA_Design/source/control_FSM.sv
+!i122 129
+L0 6 169
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/control_FSM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/control_FSM.sv|
+!s101 -O0
+!i113 1
+R6
+R7
+ncontrol_@f@s@m
+vcontrol_tb
+R0
+R1
+!i10b 1
+!s100 geKHJBI=5HJ4dUBC>`KS03
+I>MbW5EhD9FOc^oohPEe`k1
+S1
+R2
+w1733417129
+8C:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/control_tb.sv
+FC:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/control_tb.sv
+!i122 133
+L0 3 219
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/control_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/control_tb.sv|
+!s101 -O0
+!i113 1
+R6
+R7
+vsend_FSM
+R0
+R1
+!i10b 1
+!s100 Q>W?C6NVoCDk>@hR@iA3Y0
+I`9JOJ0;8kk5?Q1anb4I^^3
+S1
+R2
+w1733404697
+8C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/send_FSM.sv
+FC:/Users/hheathwood/Desktop/Project/FPGA_Design/source/send_FSM.sv
+!i122 130
+L0 6 62
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/send_FSM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/send_FSM.sv|
+!s101 -O0
+!i113 1
+R6
+R7
+nsend_@f@s@m
+vSPI_FSM
+R0
+R1
+!i10b 1
+!s100 OfXEF0;NXg4RVm:9F6>CH3
+I4^ZMXmGV4JMTf=H8XH;K=3
+S1
+R2
+w1733403515
+8C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_FSM.sv
+FC:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_FSM.sv
+!i122 131
+L0 6 10
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_FSM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_FSM.sv|
+!s101 -O0
+!i113 1
+R6
+R7
+n@s@p@i_@f@s@m
+vSPI_sync_FSM
+R0
+R1
+!i10b 1
+!s100 [g_C1g7c3nU8Km5kLR=7T1
+Ilz5Y3V1j:coj^;hZ501[?2
+S1
+R2
+w1733403442
+8C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_sync_FSM.sv
+FC:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_sync_FSM.sv
+!i122 132
+L0 6 64
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_sync_FSM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_sync_FSM.sv|
+!s101 -O0
+!i113 1
+R6
+R7
+n@s@p@i_sync_@f@s@m
+vSPI_sync_tb
+R0
+!s110 1733417135
+!i10b 1
+!s100 ElE^g9e2EYcLYQ6V95WSe2
+IBX4GeGXd0jZ;dB>0XH_CU0
+S1
+R2
+w1733382466
+8C:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/SPI_sync_tb.sv
+FC:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/SPI_sync_tb.sv
+!i122 134
+L0 4 86
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/SPI_sync_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/SPI_sync_tb.sv|
+!s101 -O0
+!i113 1
+R6
+R7
+n@s@p@i_sync_tb

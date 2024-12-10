@@ -1,43 +1,45 @@
 
                          Lattice Mapping Report File
 
-Design:  send_FSM
+Design:  top
 Family:  iCE40UP
 Device:  iCE40UP5K
 Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.1.0.34.2
-Mapped on: Sun Nov 24 22:05:28 2024
+Mapped on: Tue Dec 10 11:05:28 2024
 
 Design Information
 ------------------
 
-Command line:   map -i FPGA_Design_impl_1_syn.udb -o FPGA_Design_impl_1_map.udb
-     -mp FPGA_Design_impl_1.mrp -hierrpt -gui -msgset
+Command line:   map -pdc
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc -i
+     FPGA_Design_impl_1_syn.udb -o FPGA_Design_impl_1_map.udb -mp
+     FPGA_Design_impl_1.mrp -hierrpt -gui -msgset
      C:/Users/hheathwood/Desktop/Project/FPGA_Design/promote.xml
 
 Design Summary
 --------------
 
-   Number of slice registers:   4 out of  5280 (<1%)
-   Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:            14 out of  5280 (<1%)
-      Number of logic LUT4s:              12
-      Number of inserted feedthru LUT4s:   2
-      Number of ripple logic:              0 (0 LUT4s)
-   Number of IO sites used:   25 out of 39 (64%)
-      Number of IO sites used for general PIO: 25
+   Number of slice registers:  49 out of  5280 (1%)
+   Number of I/O registers:      2 out of   117 (2%)
+   Number of LUT4s:            97 out of  5280 (2%)
+      Number of logic LUT4s:              49
+      Number of inserted feedthru LUT4s:  14
+      Number of ripple logic:             17 (34 LUT4s)
+   Number of IO sites used:   21 out of 39 (54%)
+      Number of IO sites used for general PIO: 21
       Number of IO sites used for I3C: 0 out of 2 (0%)
       (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 25 out of 36 (69%)
+      Number of IO sites used for PIO+I3C: 21 out of 36 (58%)
       Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 25 out of 39 (64%)
+      Number of IO sites used for PIO+I3C+OD+RGB: 21 out of 39 (54%)
    Number of DSPs:             0 out of 8 (0%)
    Number of I2Cs:             0 out of 2 (0%)
-   Number of High Speed OSCs:  0 out of 1 (0%)
+   Number of High Speed OSCs:  1 out of 1 (100%)
    Number of Low Speed OSCs:   0 out of 1 (0%)
    Number of RGB PWM:          0 out of 1 (0%)
    Number of RGB Drivers:      0 out of 1 (0%)
@@ -47,19 +49,17 @@ Design Summary
    Number of SPIs:             0 out of 2 (0%)
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
-   Number of Clocks:  1
-      Net clk_c: 4 loads, 4 rising, 0 falling (Driver: Port clk)
-   Number of Clock Enables:  0
-   Number of LSRs:  1
-      Pin reset: 4 loads, 4 SLICEs (Net: reset_c)
+   Number of Clocks:  2
+      Net int_osc: 35 loads, 35 rising, 0 falling (Driver: Pin hf_osc/CLKHF)
+      Net sclk_c: 16 loads, 16 rising, 0 falling (Driver: Port sclk)
+   Number of Clock Enables:  2
+      Net VCC_net: 1 loads, 0 SLICEs
+      Pin SPILoad: 16 loads, 14 SLICEs (Net: SPILoad_c)
+   Number of LSRs:  2
+      Net s3.n260: 32 loads, 32 SLICEs
+      Net n261: 3 loads, 3 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net RSout_c_N_1[0]: 12 loads
-      Net reset_c: 4 loads
-      Net dataDone_c: 2 loads
-      Net dataReady_c: 2 loads
-      Net enable_c: 2 loads
-      Net dataIn_c_5: 1 loads
-      Net dataOut_c_5: 1 loads
+      Net s3.n357: 34 loads
 
                                     Page 1
 
@@ -69,22 +69,106 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net n41: 1 loads
-      Net n79: 1 loads
-      Net RSout_c_N_1[1]: 1 loads
+      Net s3.n260: 32 loads
+      Net SPILoad_c: 19 loads
+      Net SPIDone_c: 4 loads
+      Net n261: 3 loads
+      Net VCC_net: 3 loads
+      Net s3.count[10]: 2 loads
+      Net s3.count[11]: 2 loads
+      Net s3.count[12]: 2 loads
+      Net s3.count[9]: 2 loads
 
 
 
 
 
-   Number of warnings:  0
+   Number of warnings:  28
    Number of criticals: 0
    Number of errors:    0
 
 Design Errors/Criticals/Warnings
 --------------------------------
 
-   No error, critical, or warning presents.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (2)
+     : No port matched 'dataOut[2]'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (3)
+     : No port matched 'dataOut[3]'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (4)
+     : No port matched 'dataOut[4]'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (6)
+     : No port matched 'dataOut[7]'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (8)
+     : No port matched 'RWout'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (9)
+     : No port matched 'RSout'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc
+     (12) : No port matched 'sysclk'.
+WARNING <1027013> - map: No port matched 'dataOut[2]'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (2)
+     : Can't resolve object 'dataOut[2]' in constraint 'ldc_set_location -site
+     {48} [get_ports {dataOut[2]}]'.
+WARNING <1027013> - map: No port matched 'dataOut[3]'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (3)
+     : Can't resolve object 'dataOut[3]' in constraint 'ldc_set_location -site
+     {47} [get_ports {dataOut[3]}]'.
+WARNING <1027013> - map: No port matched 'dataOut[4]'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (4)
+     : Can't resolve object 'dataOut[4]' in constraint 'ldc_set_location -site
+     {2} [get_ports {dataOut[4]}]'.
+WARNING <1027013> - map: No port matched 'dataOut[7]'.
+
+                                    Page 2
+
+
+
+
+
+Design Errors/Criticals/Warnings (cont)
+---------------------------------------
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (6)
+     : Can't resolve object 'dataOut[7]' in constraint 'ldc_set_location -site
+     {20} [get_ports {dataOut[7]}]'.
+WARNING <1027013> - map: No port matched 'RWout'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (8)
+     : Can't resolve object 'RWout' in constraint 'ldc_set_location -site {45}
+     [get_ports RWout]'.
+WARNING <1027013> - map: No port matched 'RSout'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (9)
+     : Can't resolve object 'RSout' in constraint 'ldc_set_location -site {46}
+     [get_ports RSout]'.
+WARNING <1027013> - map: No port matched 'sysclk'.
+WARNING <1026001> - map:
+     C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc
+     (12) : Can't resolve object 'sysclk' in constraint 'ldc_set_port -iobuf
+     {PULLMODE=NA} [get_ports sysclk]'.
+WARNING <1011001> - map: Remove invalid constraint 'ldc_set_location -site {48}
+     [get_ports {dataOut[2]}]'.
+WARNING <1011001> - map: Remove invalid constraint 'ldc_set_location -site {47}
+     [get_ports {dataOut[3]}]'.
+WARNING <1011001> - map: Remove invalid constraint 'ldc_set_location -site {2}
+     [get_ports {dataOut[4]}]'.
+WARNING <1011001> - map: Remove invalid constraint 'ldc_set_location -site {20}
+     [get_ports {dataOut[7]}]'.
+WARNING <1011001> - map: Remove invalid constraint 'ldc_set_location -site {45}
+     [get_ports RWout]'.
+WARNING <1011001> - map: Remove invalid constraint 'ldc_set_location -site {46}
+     [get_ports RSout]'.
+WARNING <1011001> - map: Remove invalid constraint 'ldc_set_port -iobuf
+     {PULLMODE=NA} [get_ports sysclk]'.
 
 IO (PIO) Attributes
 -------------------
@@ -93,42 +177,24 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| clk                 | INPUT     |           |       |       |           |
+| value[4]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| dataIn[0]           | INPUT     |           |       |       |           |
+| value[3]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| dataIn[1]           | INPUT     |           |       |       |           |
+| value[7]            | OUTPUT    |           | O     |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| dataIn[2]           | INPUT     |           |       |       |           |
+| value[2]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| dataIn[3]           | INPUT     |           |       |       |           |
+| value[5]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| dataIn[4]           | INPUT     |           |       |       |           |
+| value[6]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| reset               | INPUT     |           |       |       |           |
+| value[1]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| RSout               | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| enable              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| dataOut[0]          | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| dataOut[1]          | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| dataOut[2]          | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| dataOut[3]          | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| dataOut[4]          | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| dataOut[5]          | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| dataOut[6]          | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| dataReady           | INPUT     |           |       |       |           |
+| value[0]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
-                                    Page 2
+                                    Page 3
 
 
 
@@ -136,42 +202,88 @@ IO (PIO) Attributes
 
 IO (PIO) Attributes (cont)
 --------------------------
-| dataDone            | OUTPUT    |           |       |       |           |
+| SPIDone             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| dataIn[5]           | INPUT     |           |       |       |           |
+| sclk                | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| dataIn[6]           | INPUT     |           |       |       |           |
+| SPILoad             | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| dataIn[7]           | INPUT     |           |       |       |           |
+| param[6]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| RWin                | INPUT     |           |       |       |           |
+| param[3]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| RSin                | INPUT     |           |       |       |           |
+| param[4]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| dataOut[7]          | OUTPUT    |           |       |       |           |
+| SPIData             | INPUT     |           | I     |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| RWout               | OUTPUT    |           |       |       |           |
+| param[7]            | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| reset               | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| param[5]            | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| param[0]            | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| param[1]            | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| param[2]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 Removed logic
 -------------
 
-Block clk_pad.vlo_inst was optimized away.
-Block i126 was optimized away.
+Block i1 was optimized away.
+
+OSC Summary
+-----------
+
+OSC 1:                                 Pin/Node Value
+  OSC Instance Name:                            hf_osc
+  Power UP:                            NODE     VCC_net
+  Enable Signal:                       NODE     VCC_net
+  OSC Output:                          NODE     int_osc
+  DIV Setting:                                  01
+
+ASIC Components
+---------------
+
+Instance Name: hf_osc
+         Type: HFOSC
+Instance Name: s1/param_i0_i1
+         Type: IOLOGIC
+Instance Name: s1/value_i0_i8
+         Type: IOLOGIC
 
 Constraint Summary
 ------------------
 
-   Total number of constraints: 0
-   Total number of constraints dropped: 0
+   Total number of constraints: 29
+   Total number of constraints dropped: 7
+
+                                    Page 4
+
+
+
+
+
+Constraint Summary (cont)
+-------------------------
+   Dropped constraints are:
+     ldc_set_location -site {48} [get_ports {dataOut[2]}]
+     ldc_set_location -site {47} [get_ports {dataOut[3]}]
+     ldc_set_location -site {2} [get_ports {dataOut[4]}]
+     ldc_set_location -site {20} [get_ports {dataOut[7]}]
+     ldc_set_location -site {45} [get_ports RWout]
+     ldc_set_location -site {46} [get_ports RSout]
+     ldc_set_port -iobuf {PULLMODE=NA} [get_ports sysclk]
 
 Run Time and Memory Usage
 -------------------------
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 58 MB
-Checksum -- map: 2e56e6c1eb41719f7409a8f8a7aa8f2f96333cf
+   Peak Memory Usage: 65 MB
+Checksum -- map: 7f0510781201928e3104bf118d3897a70e0518
 
 
 
@@ -194,7 +306,27 @@ Checksum -- map: 2e56e6c1eb41719f7409a8f8a7aa8f2f96333cf
 
 
 
-                                    Page 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Page 5
 
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.

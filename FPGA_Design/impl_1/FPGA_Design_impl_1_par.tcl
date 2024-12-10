@@ -18,6 +18,9 @@ if {[file exists {C:/Users/hheathwood/Desktop/Project/FPGA_Design/impl_1/FPGA_De
   file copy -force -- {C:/Users/hheathwood/Desktop/Project/FPGA_Design/impl_1/FPGA_Design_impl_1_syn.udb} {C:/Users/hheathwood/Desktop/Project/FPGA_Design/impl_1/incr/postsyn.udb}
   file copy -force -- {C:/Users/hheathwood/Desktop/Project/FPGA_Design/impl_1/FPGA_Design_impl_1_map.udb} {C:/Users/hheathwood/Desktop/Project/FPGA_Design/impl_1/incr/postmap.udb}
   file copy -force -- {C:/Users/hheathwood/Desktop/Project/FPGA_Design/impl_1/FPGA_Design_impl_1.udb} {C:/Users/hheathwood/Desktop/Project/FPGA_Design/impl_1/incr/postpar.udb}
+  if [file exists {C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc}] {
+    file copy -force -- {C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc} {C:/Users/hheathwood/Desktop/Project/FPGA_Design/impl_1/incr/lastrun.pdc}
+  }
 }
 
 } out]} {

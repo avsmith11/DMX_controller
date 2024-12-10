@@ -1,11 +1,34 @@
 ----------------------------------------------------------------------
-Report for cell SPI_FSM.TECH
-Register bits:  14 of 5280 (0.265%)
-I/O cells:      18
+Report for cell top.TECH
+Register bits:  49 of 5280 (0.928%)
+I/O cells:      21
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            FD1P3XZ        14          100.0
-                                 IB         2          100.0
+                               CCU2        17          100.0
+                            FD1P3XZ        49          100.0
+                         HSOSC_CORE         1          100.0
+                                 IB         4          100.0
                               IOL_B         2          100.0
-                                 OB        16          100.0
-                              TOTAL        34
+                               LUT4        48          100.0
+                                 OB        17          100.0
+SUB MODULES
+                            SPI_FSM         1
+                       SPI_sync_FSM         1
+                              TOTAL       140
+----------------------------------------------------------------------
+Report for cell SPI_sync_FSM.v1
+Instance Path : s3
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        17          100.0
+                            FD1P3XZ        35           71.4
+                               LUT4        47           97.9
+                              TOTAL        99
+----------------------------------------------------------------------
+Report for cell SPI_FSM.v1
+Instance Path : s1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ        14           28.6
+                              IOL_B         2          100.0
+                              TOTAL        16
