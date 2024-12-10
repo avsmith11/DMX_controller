@@ -3,7 +3,7 @@
 // hheathwood@hmc.edu
 // 11/18/24
 
-module SPI_sync_FSM (input logic sysclk, logic SPILoad, reset,
+module SPI_sync_FSM #(parameter CLKDiv = 1000)(input logic int_osc, logic SPILoad, reset,
 				output logic SPIDone);
 				
 	typedef enum logic [1:0] {waiting, pulseOn, pulseOff} statetype;
@@ -12,7 +12,7 @@ module SPI_sync_FSM (input logic sysclk, logic SPILoad, reset,
 	
 			
 	// State register
-	always_ff @(posedge sysclk)
+	always_ff @(posedge int_osc)
 		if (~reset) begin
 			state <= waiting;
 			count <= 0;
@@ -41,7 +41,7 @@ module SPI_sync_FSM (input logic sysclk, logic SPILoad, reset,
 						nextstate = pulseOff;
 						nextcount = 0;
 						end
-			pulseOff: if (count < 200) begin
+			pulseOff: if (count < CLKDiv) begin
 						nextstate = pulseOff;
 						nextcount = count + 1;
 						end

@@ -1,9 +1,33 @@
 ---------------------------------------------------
-Report for cell send_FSM
-   Instance path: send_FSM
+Report for cell top
+   Instance path: top
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         14        100.0
-                               LUTGATE	         14        100.0
-                                 IOBUF	         25        100.0
-                                PFUREG	          4        100.0
+                                 IOLGC	       2.00        100.0
+                                  LUT4	         97        100.0
+                               LUTGATE	         63        100.0
+                                LUTCCU	         34        100.0
+                                 IOREG	          2        100.0
+                                 IOBUF	         21        100.0
+                                PFUREG	         49        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                               SPI_FSM	          1         0.0
+                          SPI_sync_FSM	          1        83.5
+---------------------------------------------------
+Report for cell SPI_sync_FSM
+   Instance path: top/s3
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         81        83.5
+                               LUTGATE	         47        74.6
+                                LUTCCU	         34        100.0
+                                PFUREG	         35        71.4
+---------------------------------------------------
+Report for cell SPI_FSM
+   Instance path: top/s1
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                 IOLGC	       2.00        100.0
+                                 IOREG	          2        100.0
+                                PFUREG	         14        28.6

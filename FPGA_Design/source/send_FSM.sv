@@ -3,16 +3,16 @@
 // hheathwood@hmc.edu
 // 11/18/24
 
-module send_FSM(input logic dataReady, logic RSin, logic RWin, logic [7:0] dataIn, logic clk, logic reset,
+module send_FSM(input logic dataReady, logic RSin, logic RWin, logic [7:0] dataIn, logic int_osc, logic reset, logic en, 
 				output logic RSout, logic RWout, logic [7:0] dataOut, logic enable, logic dataDone);
 				
 	typedef enum logic [1:0] {S0, send1, send2, send3} statetype;
 	statetype state, nextstate;
 			
 	// State register
-	always_ff @(posedge clk, posedge reset)
-		if (reset) state <= S0;
-		else state <= nextstate; 
+	always_ff @(posedge int_osc)
+		if (~reset) state <= S0;
+		else if (en) state <= nextstate; 
 			
 	// Nextstate logic
 	always_comb 

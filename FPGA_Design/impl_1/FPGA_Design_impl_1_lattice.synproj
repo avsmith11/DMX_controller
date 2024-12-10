@@ -41,7 +41,6 @@
 -lib pmi -vhd "C:/lscc/radiant/2024.1/ip/pmi/pmi_iCE40UP.vhd"
 -sver "C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/control_FSM.sv"
 "C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/send_FSM.sv"
-"C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/sendFSM.sv"
 "C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_FSM.sv"
 "C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_sync_FSM.sv"
 "C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/top.sv"

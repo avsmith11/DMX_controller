@@ -1,188 +1,34 @@
 
-"C:/lscc/radiant/2024.1/tcltk/windows/bin/tclsh" "FPGA_Design_impl_1_synthesize.tcl"
-
-synthesis -f FPGA_Design_impl_1_lattice.synproj -logfile FPGA_Design_impl_1_lattice.srp
-synthesis:  version Radiant Software (64-bit) 2024.1.0.34.2
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Tue Nov 26 12:48:33 2024
-
-
-Command Line:  C:\lscc\radiant\2024.1\ispfpga\bin\nt64\synthesis.exe -f FPGA_Design_impl_1_lattice.synproj -logfile FPGA_Design_impl_1_lattice.srp -gui -msgset C:/Users/hheathwood/Desktop/Project/FPGA_Design/promote.xml 
-
-INFO <35002000> - synthesis: Lattice Synthesis Engine Launched.
-Synthesis options:
-The -a option is iCE40UP.
-The -t option is SG48.
-The -sp option is High-Performance_1.2V.
-The -p option is iCE40UP5K.
-                                                          
+timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m   -pwrprd -html -rpt "FPGA_Design_impl_1.twr" "FPGA_Design_impl_1.udb" 
+timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt FPGA_Design_impl_1.twr FPGA_Design_impl_1.udb -gui -msgset C:/Users/hheathwood/Desktop/Project/FPGA_Design/promote.xml
+Starting design reading...
+Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2024.1/ispfpga.
+Package Status:                     Preliminary    Version 1.5.
+Performance Hardware Data Status:   Advanced       Version 1.0.
+Loading udb::Database ...
+Design:  top
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:   High-Performance_1.2V
 
 
-##########################################################
 
+Successfully loading udb, 0.03 seconds
 
-### Lattice Family     : iCE40UP
+Initializing timer
+Starting design annotation....
+High-Performance_1.2V
 
+Starting full timing analysis...
+Performance Hardware Data Status:   Advanced       Version 1.0.
+Connections ignored  28  counted  337  covered  259
+Changing speed to m;   changing temperature to -40
 
-### Device             : iCE40UP5K
+STA Runtime and Peak Memory Usage :
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 101 MB
 
+ 0.658477s wall, 0.609375s user + 0.015625s system = 0.625000s CPU (94.9%)
 
-### Package            : SG48
-
-
-### Performance Grade  : High-Performance_1.2V
-
-
-                                                         
-
-
-INFO <35001786> - User-Selected Strategy Settings
-Optimization goal = Area
-Top-level module name = top.
-Target frequency = 200.000000 MHz.
-Maximum fanout = 1000.
-Timing path count = 3 (default)
-RWCheckOnRam = 0
-
-BRAM utilization = 100.000000 %
-DSP usage = true
-DSP utilization = 100.000000 %
-fsm_encoding_style = auto
-resolve_mixed_drivers = 0
-fix_gated_clocks = 1
-
-
-Mux style = auto (Default)
-Use Carry Chain = true
-carry_chain_length = 0
-Loop Limit = 1950.
-Use IO Insertion = TRUE
-Use IO Reg = AUTO
-
-Resource Sharing = TRUE
-Propagate Constants = TRUE
-Remove Duplicate Registers = TRUE
-Output HDL file name = FPGA_Design_impl_1.vm.
-ROM style = auto
-RAM style = auto
-The -comp option is FALSE.
-The -syn option is FALSE.
--path C:/Users/hheathwood/Desktop/Project/FPGA_Design (searchpath added)
--path C:/Users/hheathwood/Desktop/Project/FPGA_Design/impl_1 (searchpath added)
--path C:/lscc/radiant/2024.1/ispfpga/ice40tp/data (searchpath added)
-Mixed language design
-Verilog design file = C:/lscc/radiant/2024.1/ip/pmi/pmi_iCE40UP.v
-Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/control_FSM.sv
-Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/send_FSM.sv
-Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/sendFSM.sv
-Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_FSM.sv
-Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_sync_FSM.sv
-Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/top.sv
-Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/clk_divider.sv
-VHDL library = pmi
-VHDL design file = C:/lscc/radiant/2024.1/ip/pmi/pmi_iCE40UP.vhd
-The -r option is OFF. [ Remove LOC Properties is OFF. ]
-WARNING <35935050> - input port TRIM9 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM8 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM7 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM6 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM5 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM4 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM3 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM2 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM1 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM0 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port I is not connected on this instance. VDB-5050
-Compile design.
-Compile Design Begin
-Analyzing Verilog file c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v. VERI-1482
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(1): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_addsub.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_addsub.v(40): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(2): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_add.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_add.v(50): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/adder/rtl/lscc_adder.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(3): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_complex_mult.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_complex_mult.v(52): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(4): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_counter.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_counter.v(39): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/counter/rtl/lscc_cntr.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(5): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_fifo.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_fifo.v(44): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/fifo/rtl/lscc_fifo.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(6): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_fifo_dc.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_fifo_dc.v(47): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(7): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_mac.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_mac.v(52): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(8): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_multaddsubsum.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_multaddsubsum.v(53): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(9): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_multaddsub.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_multaddsub.v(52): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(10): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_mult.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_mult.v(51): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(11): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_ram_dp.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ram_dp.v(48): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(12): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_ram_dq.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ram_dq.v(45): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(13): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_rom.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_rom.v(45): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/rom/rtl/lscc_rom.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(14): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_sub.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_sub.v(50): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(15): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_ram_dp_be.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ram_dp_be.v(49): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(16): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_ram_dq_be.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(17): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_dsp.v. VERI-1328
-Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/control_fsm.sv. VERI-1482
-Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/send_fsm.sv. VERI-1482
-Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/sendfsm.sv. VERI-1482
-Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/spi_fsm.sv. VERI-1482
-Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/spi_sync_fsm.sv. VERI-1482
-Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/top.sv. VERI-1482
-Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv. VERI-1482
-Analyzing VHDL file c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.vhd. VHDL-1481
-Analyzing VHDL file c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.vhd
-
-INFO <35921014> - c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
-INFO <35921504> - The default VHDL library search path is now "C:/Users/hheathwood/Desktop/Project/FPGA_Design/impl_1". VHDL-1504
-Top module language type = Verilog.
-Top module name (Verilog, mixed language): top
-INFO <35901018> - c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(6): compiling module top. VERI-1018
-INFO <35901018> - c:/users/hheathwood/desktop/project/fpga_design/source/spi_fsm.sv(6): compiling module SPI_FSM. VERI-1018
-INFO <35901018> - c:/users/hheathwood/desktop/project/fpga_design/source/control_fsm.sv(6): compiling module control_FSM. VERI-1018
-WARNING <35901330> - c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(22): actual bit length 8 differs from formal bit length 5 for port paramOut. VERI-1330
-INFO <35901018> - c:/users/hheathwood/desktop/project/fpga_design/source/spi_sync_fsm.sv(6): compiling module SPI_sync_FSM. VERI-1018
-INFO <35901018> - c:/users/hheathwood/desktop/project/fpga_design/source/send_fsm.sv(6): compiling module send_FSM. VERI-1018
-INFO <35901018> - c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(6): compiling module clk_divider. VERI-1018
-WARNING <35902548> - c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(11): complement of if-condition matches sensitivity list edge; this does not match standard flip-flop behavior. VERI-2548
-WARNING <35901209> - c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(19): expression size 32 truncated to fit in target size 18. VERI-1209
-WARNING <35931002> - c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(12): net clk does not have a driver. VDB-1002
-                                                         
-
-
-### Number of Logic Cells: 5280
-
-
-### Number of RAM Blocks: 30
-
-
-### Number of DSP Blocks: 8
-
-
-### Number of PLLs: 1
-
-
-### Number of IO Pins: 56
-
-
-##########################################################
-
-
-                                                         
-
-
-WARNING <35935047> - Unused instance s5 is removed. VDB-5047
-ERROR <35002065> - c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(11): Register driving counter[17:0] uses non-standard logic which is not synthesizable.
-
-child process exited abnormally

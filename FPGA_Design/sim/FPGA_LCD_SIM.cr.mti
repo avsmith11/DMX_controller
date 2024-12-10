@@ -1,0 +1,49 @@
+C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_sync_FSM.sv {1 {vlog -work work -sv -stats=none C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_sync_FSM.sv
+** Note: (vlog-1901) OptionFile "C:/Users/erejto/Desktop/MicroP/Lab1/vlog.opt" not found. Ignored.
+Model Technology ModelSim - Lattice FPGA Edition vlog 2021.4 Compiler 2021.10 Oct 14 2021
+-- Compiling module SPI_sync_FSM
+
+Top level modules:
+	SPI_sync_FSM
+
+} {} {}} C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_FSM.sv {1 {vlog -work work -sv -stats=none C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_FSM.sv
+** Note: (vlog-1901) OptionFile "C:/Users/erejto/Desktop/MicroP/Lab1/vlog.opt" not found. Ignored.
+Model Technology ModelSim - Lattice FPGA Edition vlog 2021.4 Compiler 2021.10 Oct 14 2021
+-- Compiling module SPI_FSM
+
+Top level modules:
+	SPI_FSM
+
+} {} {}} C:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/SPI_sync_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/SPI_sync_tb.sv
+** Note: (vlog-1901) OptionFile "C:/Users/erejto/Desktop/MicroP/Lab1/vlog.opt" not found. Ignored.
+Model Technology ModelSim - Lattice FPGA Edition vlog 2021.4 Compiler 2021.10 Oct 14 2021
+-- Compiling module SPI_sync_tb
+
+Top level modules:
+	SPI_sync_tb
+
+} {} {}} C:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/control_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/hheathwood/Desktop/Project/FPGA_Design/sim/control_tb.sv
+** Note: (vlog-1901) OptionFile "C:/Users/erejto/Desktop/MicroP/Lab1/vlog.opt" not found. Ignored.
+Model Technology ModelSim - Lattice FPGA Edition vlog 2021.4 Compiler 2021.10 Oct 14 2021
+-- Compiling module control_tb
+
+Top level modules:
+	control_tb
+
+} {} {}} C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/send_FSM.sv {1 {vlog -work work -sv -stats=none C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/send_FSM.sv
+** Note: (vlog-1901) OptionFile "C:/Users/erejto/Desktop/MicroP/Lab1/vlog.opt" not found. Ignored.
+Model Technology ModelSim - Lattice FPGA Edition vlog 2021.4 Compiler 2021.10 Oct 14 2021
+-- Compiling module send_FSM
+
+Top level modules:
+	send_FSM
+
+} {} {}} C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/clk_divider.sv {1 {vlog -work work -sv -stats=none C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/clk_divider.sv
+** Note: (vlog-1901) OptionFile "C:/Users/erejto/Desktop/MicroP/Lab1/vlog.opt" not found. Ignored.
+Model Technology ModelSim - Lattice FPGA Edition vlog 2021.4 Compiler 2021.10 Oct 14 2021
+-- Compiling module clk_divider
+
+Top level modules:
+	clk_divider
+
+} {} {}}
