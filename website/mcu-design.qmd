@@ -11,7 +11,8 @@ Nine linear potentiometers are used in this project, each outputting a distinct 
 ## DMX implementation
 [The DMX standard](https://tsp.esta.org/tsp/documents/docs/ANSI%20E1.11%20-%202024.pdf) is built upon RS485, which is built upon UART. The standard provides specific timing and data-framing requirements for transmitters and receivers. Each DMX signal is a string of 8-bit values for up to 512 parameters. In this implementation, we used 18. The timing is more complicated than the USART module alone could handle, so each transmission protocol included both directly writing to the data pin for specific times and UART transmission with the UART module.
 
-##Communication with the FPGA.
+## Communication with the FPGA.
+
 The FPGA is responsible for representing only the most recently changed slider number and its value. The MCU determines which slider was most recently changed and sends the slider number and value over SPI to the FPGA. The SPI initialization and send functions were modified from the [starter code for E155 Lab 7](https://github.com/HMC-E155/hmc-e155/tree/main/lab/lab07/lab07_mcu).
 
 Throughout the development of the MCU codebase, we frequently referenced the STM32L432KC [datasheet](https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf) and [reference manual](https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf).

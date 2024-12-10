@@ -1,10 +1,10 @@
 ---
 title: Documentation
 ---
-(GitHub Repository)[https://github.com/avsmith11/DMX_controller]
+[GitHub Repository](https://github.com/avsmith11/DMX_controller)
 ## New Hardware
 
-The specifications for this project included the requirement that we use a new piece of hardware. In our project, we used linear potentiometers as faders, two (ZQ-B147 moving spots from Uking)[https://www.uking-online.com/wp-content/uploads/2020/10/ZQ-B147.pdf], and a (dmx adapter from Grove)[https://wiki.seeedstudio.com/Grove-DMX512/], which includes a DMX out connector, and the (SN75176 differential bus transceiver)[https://www.ti.com/lit/ds/symlink/sn75176a.pdf]. We planned to use an LCD display as an additional new piece of hardware, but it was not included in our final implementation.
+The specifications for this project included the requirement that we use a new piece of hardware. In our project, we used linear potentiometers as faders, two [ZQ-B147 moving spots from Uking](https://www.uking-online.com/wp-content/uploads/2020/10/ZQ-B147.pdf), and a [dmx adapter from Grove](https://wiki.seeedstudio.com/Grove-DMX512/), which includes a DMX out connector, and the [SN75176 differential bus transceiver](https://www.ti.com/lit/ds/symlink/sn75176a.pdf). We planned to use an LCD display as an additional new piece of hardware, but it was not included in our final implementation.
 
 The linear potentiometers are an example of an analog input, which we had not used in this class. Therefore, implementing the ADC was necessary. The moving spots were the main application of this project, although all that was important was their datasheet (linked above) that explains how the parameters received via DMX are assigned to different controls.
 

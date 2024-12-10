@@ -3,13 +3,19 @@ title: Team
 ---
 
 # Avery Smith
-![images/Avery Headshot.jpg]
-## Mudd '26
+
+![](images/Avery Headshot.jpg)
+
+### Mudd '26
+
 [LinkedIn](https://www.linkedin.com/in/avery-smith-434ab4262/)
 In addition to engineering, Avery is concentrating in Theatre and is currently in a lighting class. He wanted to combine these interests into a cool project.
 
 # Henry Heathwood
-![images/Henry_Headshot.jpg]
-## Mudd '26
+
+![](images/Henry_Headshsot.jpg)
+
+### Mudd '26
+
 [LinkedIn](https://www.linkedin.com/in/henry-heathwood-9a0192176)
 Henry is an Engineering major who specializes in electrical and mechanical engineering. He wanted to explore electrical engineering more with a dive into embedded systems.

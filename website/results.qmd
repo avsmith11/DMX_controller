@@ -13,7 +13,7 @@ Our implementation as of the due date of this assignment was mostly successful. 
 
 The modified block diagram with the LED displays instead of the LCD is below
 
-![Modified Block Diagram](images/Modifiied_Block_Diagram.png)
+![Modified Block Diagram](images/Modified_Block_Diagram.png)
 
 To determine the latency of the control board, we measured the time between DMX signals on the oscilloscope. Since the DMX transmission is part of the main loop, a new signal is only sent after all the parameters have been updated.
 
@@ -32,4 +32,3 @@ The Hardware implementation is quite barebones, though we have plans to improve 
 Although we never got the LCD screen to work, we could fully simulate the correct functionality of the LCD control FSM, as shown in the picture below.
 
 ![Control FSM Simulation](images/Control_FSM_Simulation.jpg)
-

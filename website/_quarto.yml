@@ -9,12 +9,13 @@ website:
         href: https://github.com/HMC-E155/final-project-portfolio
     left:
       - href: index.qmd
-        text: Home
-      - href: documentation.qmd 
+        text: Abstract
+      - href: team.qmd
       - href: fpga-design.qmd
       - href: mcu-design.qmd
       - href: results.qmd
-      - href: team.qmd
+      - href: documentation.qmd 
+      - href: acknowledgements_references.qmd
 
 format:
   html:
