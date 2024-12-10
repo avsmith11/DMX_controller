@@ -90,11 +90,11 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">Abstract</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./documentation.html"> 
-<span class="menu-text">Documentation</span></a>
+    <a class="nav-link" href="./team.html"> 
+<span class="menu-text">Team</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./fpga-design.html"> 
@@ -109,8 +109,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Results</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./team.html"> 
-<span class="menu-text">Team</span></a>
+    <a class="nav-link" href="./documentation.html"> 
+<span class="menu-text">Documentation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./acknowledgements_references.html"> 
+<span class="menu-text">Acknowledgements and References</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -149,6 +153,51 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/97NrsoAurR8?si=5EXSuO4hXu11_xzj" title="’Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/whole_system.jpg" class="img-fluid figure-img"></p>
+<figcaption>Whole System</figcaption>
+</figure>
+</div>
+<p>Our implementation as of the due date of this assignment was mostly successful. The DMX controller worked as intended with no perceivable latency, and although the data transmitted to the FPGA was not displayed on an LCD as intended, it was successfully transmitted and received and could be viewed in binary on an LED display.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/FPGA_display.jpg" class="img-fluid figure-img"></p>
+<figcaption>FPGA Display</figcaption>
+</figure>
+</div>
+<p>The modified block diagram with the LED displays instead of the LCD is below</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Modified_Block_Diagram.png" class="img-fluid figure-img"></p>
+<figcaption>Modified Block Diagram</figcaption>
+</figure>
+</div>
+<p>To determine the latency of the control board, we measured the time between DMX signals on the oscilloscope. Since the DMX transmission is part of the main loop, a new signal is only sent after all the parameters have been updated.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/UART_packets.png" class="img-fluid figure-img"></p>
+<figcaption>Zoomed Out Oscilloscope Trace of DMX signal</figcaption>
+</figure>
+</div>
+<p>As you can see from the cursors, the time between transmissions is only 16.5ms, which is too small for people to perceive.</p>
+<p>The time from changing a value to it displaying on the FPGA display is roughly the same. The SPI communication occurs at 20MHz, but it only happens once every loop.</p>
+<p>The Hardware implementation is quite barebones, though we have plans to improve it outside the timescale of this course. The sliders are mounted to a breadboard as shown below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/slider_board.jpg" class="img-fluid figure-img"></p>
+<figcaption>Slider Board</figcaption>
+</figure>
+</div>
+<p>##Simulations</p>
+<p>Although we never got the LCD screen to work, we could fully simulate the correct functionality of the LCD control FSM, as shown in the picture below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Control_FSM_Simulation.jpg" class="img-fluid figure-img"></p>
+<figcaption>Control FSM Simulation</figcaption>
+</figure>
+</div>
 
 
 

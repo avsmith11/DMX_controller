@@ -90,11 +90,11 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">Abstract</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./documentation.html" aria-current="page"> 
-<span class="menu-text">Documentation</span></a>
+    <a class="nav-link" href="./team.html"> 
+<span class="menu-text">Team</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./fpga-design.html"> 
@@ -109,8 +109,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Results</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./team.html"> 
-<span class="menu-text">Team</span></a>
+    <a class="nav-link active" href="./documentation.html" aria-current="page"> 
+<span class="menu-text">Documentation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./acknowledgements_references.html"> 
+<span class="menu-text">Acknowledgements and References</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -124,8 +128,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#schematics" id="toc-schematics" class="nav-link active" data-scroll-target="#schematics">Schematics</a></li>
+  <li><a href="#bill-of-materials" id="toc-bill-of-materials" class="nav-link" data-scroll-target="#bill-of-materials">Bill of Materials</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -149,8 +160,35 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><a href="https://github.com/avsmith11/DMX_controller">GitHub Repository</a> ## New Hardware</p>
+<p>The specifications for this project included the requirement that we use a new piece of hardware. In our project, we used linear potentiometers as faders, two <a href="https://www.uking-online.com/wp-content/uploads/2020/10/ZQ-B147.pdf">ZQ-B147 moving spots from Uking</a>, and a <a href="https://wiki.seeedstudio.com/Grove-DMX512/">dmx adapter from Grove</a>, which includes a DMX out connector, and the <a href="https://www.ti.com/lit/ds/symlink/sn75176a.pdf">SN75176 differential bus transceiver</a>. We planned to use an LCD display as an additional new piece of hardware, but it was not included in our final implementation.</p>
+<p>The linear potentiometers are an example of an analog input, which we had not used in this class. Therefore, implementing the ADC was necessary. The moving spots were the main application of this project, although all that was important was their datasheet (linked above) that explains how the parameters received via DMX are assigned to different controls.</p>
+<section id="schematics" class="level2">
+<h2 class="anchored" data-anchor-id="schematics">Schematics</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MCU Schematic.png" class="img-fluid figure-img"></p>
+<figcaption>MCU Schematic</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/FPGA_Schematic.jpg" class="img-fluid figure-img"></p>
+<figcaption>FPGA Schematic</figcaption>
+</figure>
+</div>
+</section>
+<section id="bill-of-materials" class="level2">
+<h2 class="anchored" data-anchor-id="bill-of-materials">Bill of Materials</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Bill_Of_Materials.jpg" class="img-fluid figure-img"></p>
+<figcaption>Bill of Materials</figcaption>
+</figure>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

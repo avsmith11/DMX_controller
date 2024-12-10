@@ -4,7 +4,98 @@
     "href": "team.html",
     "title": "Team",
     "section": "",
-    "text": "Avery Smith\n![images/Avery Headshot.jpg] ## Mudd ’26 LinkedIn In addition to engineering, Avery has a concentration in theatre and is currently in a lighting class. He wanted to combine these interests in a cool project."
+    "text": "Avery Smith\n\n\nMudd ’26\nLinkedIn In addition to engineering, Avery is concentrating in Theatre and is currently in a lighting class. He wanted to combine these interests into a cool project.\n\n\n\nHenry Heathwood\n\n\nMudd ’26\nLinkedIn Henry is an Engineering major who specializes in electrical and mechanical engineering. He wanted to explore electrical engineering more with a dive into embedded systems."
+  },
+  {
+    "objectID": "mcu-design.html",
+    "href": "mcu-design.html",
+    "title": "MCU Design",
+    "section": "",
+    "text": "The MCU is the main controller in this project. It is responsible for reading analog values from the sliders with the ADC, sending those values over DMX using USART, and sending the most recently changed value to the FPGA over SPI."
+  },
+  {
+    "objectID": "mcu-design.html#mcu-responsibilities",
+    "href": "mcu-design.html#mcu-responsibilities",
+    "title": "MCU Design",
+    "section": "",
+    "text": "The MCU is the main controller in this project. It is responsible for reading analog values from the sliders with the ADC, sending those values over DMX using USART, and sending the most recently changed value to the FPGA over SPI."
+  },
+  {
+    "objectID": "mcu-design.html#adc-implementation",
+    "href": "mcu-design.html#adc-implementation",
+    "title": "MCU Design",
+    "section": "ADC implementation",
+    "text": "ADC implementation\nNine linear potentiometers are used in this project, each outputting a distinct analog value between 0 and 3.3V. The onboard ADC is capable of up to 10 12-bit conversions of external signals. At the beginning of the loop, all 9 signals are sampled 100 times and averaged to reduce noise. The 12-bit values are then cast to 8 bits to fit the size of a DMX parameter. The initialization code for the ADC was modified from a previous E155 project by Eli Rejto and Kevin Box"
+  },
+  {
+    "objectID": "mcu-design.html#dmx-implementation",
+    "href": "mcu-design.html#dmx-implementation",
+    "title": "MCU Design",
+    "section": "DMX implementation",
+    "text": "DMX implementation\nThe DMX standard is built upon RS485, which is built upon UART. The standard provides specific timing and data-framing requirements for transmitters and receivers. Each DMX signal is a string of 8-bit values for up to 512 parameters. In this implementation, we used 18. The timing is more complicated than the USART module alone could handle, so each transmission protocol included both directly writing to the data pin for specific times and UART transmission with the UART module."
+  },
+  {
+    "objectID": "mcu-design.html#communication-with-the-fpga.",
+    "href": "mcu-design.html#communication-with-the-fpga.",
+    "title": "MCU Design",
+    "section": "Communication with the FPGA.",
+    "text": "Communication with the FPGA.\nThe FPGA is responsible for representing only the most recently changed slider number and its value. The MCU determines which slider was most recently changed and sends the slider number and value over SPI to the FPGA. The SPI initialization and send functions were modified from the starter code for E155 Lab 7.\nThroughout the development of the MCU codebase, we frequently referenced the STM32L432KC datasheet and reference manual."
+  },
+  {
+    "objectID": "fpga-design.html",
+    "href": "fpga-design.html",
+    "title": "FPGA Design",
+    "section": "",
+    "text": "The FPGA system is responsible for receiving SPI data from the MCU and displaying this data on a 16x2 LCD display. This SPI data contains the DMX parameter number and the current value of the most recently changed parameter. The FPGA then uses a combination of different modules and finite state machines to implement the LCD protocol and display the SPI data visually on the screen. This design was adapted from a previous E155 Project by Declan O’Neill and Kip Macsai-GorenBelow is the HDL block diagram. Note, the IO for the FPGA is spread across four units on the schematic.\n\n\n\nFPGA Block Diagram\n\n\nThis design begins with an SPI receiver module that accepts the SPI data from the MCU and organizes it into two 8-bit signals. One signal represents the parameter number and the other represents the value of that parameter. The system also receives an SPILoad signal that indicates an SPI transaction is happening. This signal is sent through a synchronizer FSM to ensure that an SPIDone signal is held high for long enough to be detected by the slower 20kHz clock of the control FSM. This pulse is held high for 1000 clock cycles, as this is the ratio between the fast and slow clocks. This ensures that the slow clock can detect the SPIDone signal. This synchronizer is shown below.\n\n\n\nSPI Sync FSM\n\n\nThe biggest and most important FSM of this design is the control FSM. On startup, this FSM sends specific values to the configuration register of the LCD screen. This puts the screen into a mode where the cursor is automatically incremented after each character is written. The FSM then waits to receive the SPIDone signal from the synchronizer to indicate when the SPI data transaction is finished. The FSM then sets certain values for the RW, RS, and data signals to correctly display the value and param on the LCD screen. For each set of data to be sent to the screen, the FSM raises a dataReady flag to indicate to the final sending FSM that the data is ready to be sent to the screen. The sending FSM then raises a dataDone flag to indicate when the data transfer is complete. State transition diagrams for the control FSM and the sending FSM are shown below\n \nUnfortunately, as mentioned in our results, the LCD screen was not included in the final implementation of the project, but we instead displayed the binary values of the value and param signals on 16 LEDs. The control FSM is very complex with many different pieces that all need to work together perfectly for success. Although it worked in simulation, we were never able to get it working in hardware."
+  },
+  {
+    "objectID": "fpga-design.html#overall-design",
+    "href": "fpga-design.html#overall-design",
+    "title": "FPGA Design",
+    "section": "",
+    "text": "The FPGA system is responsible for receiving SPI data from the MCU and displaying this data on a 16x2 LCD display. This SPI data contains the DMX parameter number and the current value of the most recently changed parameter. The FPGA then uses a combination of different modules and finite state machines to implement the LCD protocol and display the SPI data visually on the screen. This design was adapted from a previous E155 Project by Declan O’Neill and Kip Macsai-GorenBelow is the HDL block diagram. Note, the IO for the FPGA is spread across four units on the schematic.\n\n\n\nFPGA Block Diagram\n\n\nThis design begins with an SPI receiver module that accepts the SPI data from the MCU and organizes it into two 8-bit signals. One signal represents the parameter number and the other represents the value of that parameter. The system also receives an SPILoad signal that indicates an SPI transaction is happening. This signal is sent through a synchronizer FSM to ensure that an SPIDone signal is held high for long enough to be detected by the slower 20kHz clock of the control FSM. This pulse is held high for 1000 clock cycles, as this is the ratio between the fast and slow clocks. This ensures that the slow clock can detect the SPIDone signal. This synchronizer is shown below.\n\n\n\nSPI Sync FSM\n\n\nThe biggest and most important FSM of this design is the control FSM. On startup, this FSM sends specific values to the configuration register of the LCD screen. This puts the screen into a mode where the cursor is automatically incremented after each character is written. The FSM then waits to receive the SPIDone signal from the synchronizer to indicate when the SPI data transaction is finished. The FSM then sets certain values for the RW, RS, and data signals to correctly display the value and param on the LCD screen. For each set of data to be sent to the screen, the FSM raises a dataReady flag to indicate to the final sending FSM that the data is ready to be sent to the screen. The sending FSM then raises a dataDone flag to indicate when the data transfer is complete. State transition diagrams for the control FSM and the sending FSM are shown below\n \nUnfortunately, as mentioned in our results, the LCD screen was not included in the final implementation of the project, but we instead displayed the binary values of the value and param signals on 16 LEDs. The control FSM is very complex with many different pieces that all need to work together perfectly for success. Although it worked in simulation, we were never able to get it working in hardware."
+  },
+  {
+    "objectID": "acknowledgements_references.html",
+    "href": "acknowledgements_references.html",
+    "title": "Acknowledgements and References",
+    "section": "",
+    "text": "Prof. Brake - Thank you for facilitating the most learning we’ve ever done in a semester with kindness and compassion and for helping us find components and resources for this project.\nKavi Dey - Thank you for hours upon hours of help in the lab throughout the semester, especially during the project.\nXavier Walter - Thank you for helping us debug, even when it just meant listening to us complain about things not working.\nEvery MicroPs Student - Thank you for creating and participating in this collaborative environment where there was always someone to lend a helping hand.\nTalia Wigder - Thank you for letting us into party storage to steal borrow the moving lights.\nRichard Nix (ETSA Standards) - Thank you for pointing us to where to find the DMX standard for free and not $200."
+  },
+  {
+    "objectID": "acknowledgements_references.html#acknowledgements",
+    "href": "acknowledgements_references.html#acknowledgements",
+    "title": "Acknowledgements and References",
+    "section": "",
+    "text": "Prof. Brake - Thank you for facilitating the most learning we’ve ever done in a semester with kindness and compassion and for helping us find components and resources for this project.\nKavi Dey - Thank you for hours upon hours of help in the lab throughout the semester, especially during the project.\nXavier Walter - Thank you for helping us debug, even when it just meant listening to us complain about things not working.\nEvery MicroPs Student - Thank you for creating and participating in this collaborative environment where there was always someone to lend a helping hand.\nTalia Wigder - Thank you for letting us into party storage to steal borrow the moving lights.\nRichard Nix (ETSA Standards) - Thank you for pointing us to where to find the DMX standard for free and not $200."
+  },
+  {
+    "objectID": "acknowledgements_references.html#references",
+    "href": "acknowledgements_references.html#references",
+    "title": "Acknowledgements and References",
+    "section": "References",
+    "text": "References\nANSI E1.11 – 2024 Entertainment Technology—USITT DMX512-A Asynchronous Serial Digital Data Transmission Standard for Controlling Lighting Equipment and Accessories https://tsp.esta.org/tsp/documents/docs/ANSI%20E1.11%20-%202024.pdf\nDMX512 https://en.wikipedia.org/wiki/DMX512\nLCD Protocol https://electronicsforu.com/technology-trends/learn-electronics/16x2-lcd-pinout-diagram\nZQ-B147 Datasheet https://www.uking-online.com/wp-content/uploads/2020/10/ZQ-B147.pdf\nSTM32L432KC Datasheet https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf\nSTM32L432KC Reference Manual https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf"
+  },
+  {
+    "objectID": "documentation.html",
+    "href": "documentation.html",
+    "title": "Documentation",
+    "section": "",
+    "text": "GitHub Repository ## New Hardware\nThe specifications for this project included the requirement that we use a new piece of hardware. In our project, we used linear potentiometers as faders, two ZQ-B147 moving spots from Uking, and a dmx adapter from Grove, which includes a DMX out connector, and the SN75176 differential bus transceiver. We planned to use an LCD display as an additional new piece of hardware, but it was not included in our final implementation.\nThe linear potentiometers are an example of an analog input, which we had not used in this class. Therefore, implementing the ADC was necessary. The moving spots were the main application of this project, although all that was important was their datasheet (linked above) that explains how the parameters received via DMX are assigned to different controls."
+  },
+  {
+    "objectID": "documentation.html#schematics",
+    "href": "documentation.html#schematics",
+    "title": "Documentation",
+    "section": "Schematics",
+    "text": "Schematics\n\n\n\nMCU Schematic\n\n\n\n\n\nFPGA Schematic"
+  },
+  {
+    "objectID": "documentation.html#bill-of-materials",
+    "href": "documentation.html#bill-of-materials",
+    "title": "Documentation",
+    "section": "Bill of Materials",
+    "text": "Bill of Materials\n\n\n\nBill of Materials"
   },
   {
     "objectID": "index.html",
@@ -14,17 +105,17 @@
     "text": "This repository contains a suggested structure for the final report."
   },
   {
-    "objectID": "index.html#portfolio-contents",
-    "href": "index.html#portfolio-contents",
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
     "title": "E155 Final Project Portfolio Website",
-    "section": "Portfolio Contents",
-    "text": "Portfolio Contents\nYour portfolio website should include the following items:\n\nAn overview/home page\n\nA 200-word abstract that summarizes what your project does\nA short video which demonstrates your project in operation\nA block diagram of your system\nA table of contents (e.g., links to other resources on the portfolio website)\n\nA main documentation page\n\nA description of the new hardware used by your project\nSchematics for your system\nA link to the Github repository containing the source code for your project\nA complete bill of materials with item name, part number, quantity, unit price, and total price.\n\nAn FPGA design page\n\nA brief summary of the FPGA design\nA block diagram of the HDL you wrote\nAny accompanying documentation necessary to describe its operation (e.g., state transition diagrams). You do not need to cover nitty gritty details like state transition or output logic tables.\n\nAn MCU design page\n\nA brief summary of what the MCU does\nAny diagrams needed to explain the flow of the MCU code\n\nResults\n\nA discussion of the overall performance of the final system\nAny relevant simulation results or oscilloscope traces\nVideos or photos of the final project or any intermediate build steps.\n\nTeam\n\nA list of the team members with a one sentence bio and links to any relevant personal websites or social media presence. As a bonus, add photos here."
+    "section": "Abstract",
+    "text": "Abstract\nDMX is a digital control standard used for lighting and effects commonly used in theatre and concerts. One of the key facets of DMX is that its topology includes just one daisy-chained signal. Instruments connected to the signal are assigned an address and pick out their respective parts of the modified UART signal. We designed a simple live DMX controller that allows a user to control the movement, brightness, color, pattern, and strobe of these moving lights with tactile analog sliders and display the most recent changed parameter on an LCD. Though, it would work just as well for any DMX light. This project involved a dive into the DMX protocol or ANSI E1.11, the LCD protocol, and several peripherals on the MCU including the ADC, UART, and SPI. The Implementation as of the project check-off included two 10-segment displays to stand in for the LCD due to time constraints on debugging. This portfolio contains a successful simulation of the LCD control module.\n\n\n\nOverall Block Diagram\n\n\n\nA more in-depth video is linked under results."
   },
   {
-    "objectID": "index.html#notes",
-    "href": "index.html#notes",
-    "title": "E155 Final Project Portfolio Website",
-    "section": "Notes",
-    "text": "Notes\n\nDo not upload video files into your Git repo! They are too big. Instead, upload to external video hosting sites (e.g., YouTube or Vimeo) and embed the HTML. You can directly paste the embed HTML code into your Quarto markdown.\nThink of your front page like a pitch. You’re looking to give the reader a quick summary of what your project is and invite them to check it out in more detail.\nHost the portfolio website using Github pages. The most seamless way is to keep all the Quarto source docs inside a docs folder of your project Github repository and run quarto publish from there to render to Github pages. As a reminder, instructions on how to render can be found here."
+    "objectID": "results.html",
+    "href": "results.html",
+    "title": "Results",
+    "section": "",
+    "text": "Whole System\n\n\nOur implementation as of the due date of this assignment was mostly successful. The DMX controller worked as intended with no perceivable latency, and although the data transmitted to the FPGA was not displayed on an LCD as intended, it was successfully transmitted and received and could be viewed in binary on an LED display.\n\n\n\nFPGA Display\n\n\nThe modified block diagram with the LED displays instead of the LCD is below\n\n\n\nModified Block Diagram\n\n\nTo determine the latency of the control board, we measured the time between DMX signals on the oscilloscope. Since the DMX transmission is part of the main loop, a new signal is only sent after all the parameters have been updated.\n\n\n\nZoomed Out Oscilloscope Trace of DMX signal\n\n\nAs you can see from the cursors, the time between transmissions is only 16.5ms, which is too small for people to perceive.\nThe time from changing a value to it displaying on the FPGA display is roughly the same. The SPI communication occurs at 20MHz, but it only happens once every loop.\nThe Hardware implementation is quite barebones, though we have plans to improve it outside the timescale of this course. The sliders are mounted to a breadboard as shown below.\n\n\n\nSlider Board\n\n\n##Simulations\nAlthough we never got the LCD screen to work, we could fully simulate the correct functionality of the LCD control FSM, as shown in the picture below.\n\n\n\nControl FSM Simulation"
   }
 ]

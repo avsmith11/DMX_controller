@@ -90,11 +90,11 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">Abstract</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./documentation.html"> 
-<span class="menu-text">Documentation</span></a>
+    <a class="nav-link" href="./team.html"> 
+<span class="menu-text">Team</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./fpga-design.html"> 
@@ -109,8 +109,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Results</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./team.html"> 
-<span class="menu-text">Team</span></a>
+    <a class="nav-link" href="./documentation.html"> 
+<span class="menu-text">Documentation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./acknowledgements_references.html"> 
+<span class="menu-text">Acknowledgements and References</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -124,8 +128,17 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#mcu-responsibilities" id="toc-mcu-responsibilities" class="nav-link active" data-scroll-target="#mcu-responsibilities">MCU Responsibilities</a></li>
+  <li><a href="#adc-implementation" id="toc-adc-implementation" class="nav-link" data-scroll-target="#adc-implementation">ADC implementation</a></li>
+  <li><a href="#dmx-implementation" id="toc-dmx-implementation" class="nav-link" data-scroll-target="#dmx-implementation">DMX implementation</a></li>
+  <li><a href="#communication-with-the-fpga." id="toc-communication-with-the-fpga." class="nav-link" data-scroll-target="#communication-with-the-fpga.">Communication with the FPGA.</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -149,8 +162,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="mcu-responsibilities" class="level2">
+<h2 class="anchored" data-anchor-id="mcu-responsibilities">MCU Responsibilities</h2>
+<p>The MCU is the main controller in this project. It is responsible for reading analog values from the sliders with the ADC, sending those values over DMX using USART, and sending the most recently changed value to the FPGA over SPI.</p>
+</section>
+<section id="adc-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="adc-implementation">ADC implementation</h2>
+<p>Nine linear potentiometers are used in this project, each outputting a distinct analog value between 0 and 3.3V. The onboard ADC is capable of up to 10 12-bit conversions of external signals. At the beginning of the loop, all 9 signals are sampled 100 times and averaged to reduce noise. The 12-bit values are then cast to 8 bits to fit the size of a DMX parameter. The initialization code for the ADC was modified from a previous <a href="https://github.com/ERejto/FPGA_Synthesizer/tree/main/MCU">E155 project by Eli Rejto and Kevin Box</a></p>
+</section>
+<section id="dmx-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="dmx-implementation">DMX implementation</h2>
+<p><a href="https://tsp.esta.org/tsp/documents/docs/ANSI%20E1.11%20-%202024.pdf">The DMX standard</a> is built upon RS485, which is built upon UART. The standard provides specific timing and data-framing requirements for transmitters and receivers. Each DMX signal is a string of 8-bit values for up to 512 parameters. In this implementation, we used 18. The timing is more complicated than the USART module alone could handle, so each transmission protocol included both directly writing to the data pin for specific times and UART transmission with the UART module.</p>
+</section>
+<section id="communication-with-the-fpga." class="level2">
+<h2 class="anchored" data-anchor-id="communication-with-the-fpga.">Communication with the FPGA.</h2>
+<p>The FPGA is responsible for representing only the most recently changed slider number and its value. The MCU determines which slider was most recently changed and sends the slider number and value over SPI to the FPGA. The SPI initialization and send functions were modified from the <a href="https://github.com/HMC-E155/hmc-e155/tree/main/lab/lab07/lab07_mcu">starter code for E155 Lab 7</a>.</p>
+<p>Throughout the development of the MCU codebase, we frequently referenced the STM32L432KC <a href="https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf">datasheet</a> and <a href="https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">reference manual</a>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
