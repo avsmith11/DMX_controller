@@ -1,5 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
+    <Task name="Map">
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>2</Dynamic>
+            <Dynamic>No port matched 'dataOut[2]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>2</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>3</Dynamic>
+            <Dynamic>No port matched 'dataOut[3]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>3</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>4</Dynamic>
+            <Dynamic>No port matched 'dataOut[4]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>6</Dynamic>
+            <Dynamic>No port matched 'dataOut[7]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>8</Dynamic>
+            <Dynamic>No port matched 'RWout'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>8</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>9</Dynamic>
+            <Dynamic>No port matched 'RSout'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>9</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>12</Dynamic>
+            <Dynamic>No port matched 'sysclk'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>12</Navigation>
+        </Message>
+        <Message>
+            <ID>1027013</ID>
+            <Severity>16</Severity>
+            <Dynamic>port</Dynamic>
+            <Dynamic>dataOut[2]</Dynamic>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>2</Dynamic>
+            <Dynamic>Can't resolve object 'dataOut[2]' in constraint 'ldc_set_location -site {48} [get_ports {dataOut[2]}]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>2</Navigation>
+        </Message>
+        <Message>
+            <ID>1027013</ID>
+            <Severity>16</Severity>
+            <Dynamic>port</Dynamic>
+            <Dynamic>dataOut[3]</Dynamic>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>3</Dynamic>
+            <Dynamic>Can't resolve object 'dataOut[3]' in constraint 'ldc_set_location -site {47} [get_ports {dataOut[3]}]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>3</Navigation>
+        </Message>
+        <Message>
+            <ID>1027013</ID>
+            <Severity>16</Severity>
+            <Dynamic>port</Dynamic>
+            <Dynamic>dataOut[4]</Dynamic>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>4</Dynamic>
+            <Dynamic>Can't resolve object 'dataOut[4]' in constraint 'ldc_set_location -site {2} [get_ports {dataOut[4]}]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>1027013</ID>
+            <Severity>16</Severity>
+            <Dynamic>port</Dynamic>
+            <Dynamic>dataOut[7]</Dynamic>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>6</Dynamic>
+            <Dynamic>Can't resolve object 'dataOut[7]' in constraint 'ldc_set_location -site {20} [get_ports {dataOut[7]}]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>1027013</ID>
+            <Severity>16</Severity>
+            <Dynamic>port</Dynamic>
+            <Dynamic>RWout</Dynamic>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>8</Dynamic>
+            <Dynamic>Can't resolve object 'RWout' in constraint 'ldc_set_location -site {45} [get_ports RWout]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>8</Navigation>
+        </Message>
+        <Message>
+            <ID>1027013</ID>
+            <Severity>16</Severity>
+            <Dynamic>port</Dynamic>
+            <Dynamic>RSout</Dynamic>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>9</Dynamic>
+            <Dynamic>Can't resolve object 'RSout' in constraint 'ldc_set_location -site {46} [get_ports RSout]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>9</Navigation>
+        </Message>
+        <Message>
+            <ID>1027013</ID>
+            <Severity>16</Severity>
+            <Dynamic>port</Dynamic>
+            <Dynamic>sysclk</Dynamic>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>12</Dynamic>
+            <Dynamic>Can't resolve object 'sysclk' in constraint 'ldc_set_port -iobuf {PULLMODE=NA} [get_ports sysclk]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>12</Navigation>
+        </Message>
+        <Message>
+            <ID>1011001</ID>
+            <Severity>16</Severity>
+            <Dynamic>ldc_set_location -site {48} [get_ports {dataOut[2]}]</Dynamic>
+        </Message>
+        <Message>
+            <ID>1011001</ID>
+            <Severity>16</Severity>
+            <Dynamic>ldc_set_location -site {47} [get_ports {dataOut[3]}]</Dynamic>
+        </Message>
+        <Message>
+            <ID>1011001</ID>
+            <Severity>16</Severity>
+            <Dynamic>ldc_set_location -site {2} [get_ports {dataOut[4]}]</Dynamic>
+        </Message>
+        <Message>
+            <ID>1011001</ID>
+            <Severity>16</Severity>
+            <Dynamic>ldc_set_location -site {20} [get_ports {dataOut[7]}]</Dynamic>
+        </Message>
+        <Message>
+            <ID>1011001</ID>
+            <Severity>16</Severity>
+            <Dynamic>ldc_set_location -site {45} [get_ports RWout]</Dynamic>
+        </Message>
+        <Message>
+            <ID>1011001</ID>
+            <Severity>16</Severity>
+            <Dynamic>ldc_set_location -site {46} [get_ports RSout]</Dynamic>
+        </Message>
+        <Message>
+            <ID>1011001</ID>
+            <Severity>16</Severity>
+            <Dynamic>ldc_set_port -iobuf {PULLMODE=NA} [get_ports sysclk]</Dynamic>
+        </Message>
+    </Task>
     <Task name="Synthesis">
         <Message>
             <ID>35001786</ID>
@@ -325,6 +530,30 @@
             <Navigation>17</Navigation>
         </Message>
         <Message>
+            <ID>35901372</ID>
+            <Severity>16</Severity>
+            <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(10): </Dynamic>
+            <Dynamic>param</Dynamic>
+            <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/top.sv</Navigation>
+            <Navigation>10</Navigation>
+        </Message>
+        <Message>
+            <ID>35901372</ID>
+            <Severity>16</Severity>
+            <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(11): </Dynamic>
+            <Dynamic>value</Dynamic>
+            <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/top.sv</Navigation>
+            <Navigation>11</Navigation>
+        </Message>
+        <Message>
+            <ID>35901372</ID>
+            <Severity>16</Severity>
+            <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(12): </Dynamic>
+            <Dynamic>SPIDone</Dynamic>
+            <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/top.sv</Navigation>
+            <Navigation>12</Navigation>
+        </Message>
+        <Message>
             <ID>35921014</ID>
             <Severity>1</Severity>
             <Dynamic>c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.vhd(4): </Dynamic>
@@ -349,28 +578,18 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/spi_fsm.sv(6): </Dynamic>
-            <Dynamic>SPI_FSM</Dynamic>
-            <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/spi_fsm.sv</Navigation>
-            <Navigation>6</Navigation>
+            <Dynamic>C:/lscc/radiant/2024.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): </Dynamic>
+            <Dynamic>HSOSC(CLKHF_DIV=2'b01)</Dynamic>
+            <Navigation>C:/lscc/radiant/2024.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
+            <Navigation>756</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/control_fsm.sv(6): </Dynamic>
-            <Dynamic>control_FSM</Dynamic>
-            <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/control_fsm.sv</Navigation>
+            <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/spi_fsm.sv(6): </Dynamic>
+            <Dynamic>SPI_FSM</Dynamic>
+            <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/spi_fsm.sv</Navigation>
             <Navigation>6</Navigation>
-        </Message>
-        <Message>
-            <ID>35901330</ID>
-            <Severity>16</Severity>
-            <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(22): </Dynamic>
-            <Dynamic>8</Dynamic>
-            <Dynamic>5</Dynamic>
-            <Dynamic>paramOut</Dynamic>
-            <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/top.sv</Navigation>
-            <Navigation>22</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
@@ -383,42 +602,19 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/send_fsm.sv(6): </Dynamic>
-            <Dynamic>send_FSM</Dynamic>
-            <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/send_fsm.sv</Navigation>
-            <Navigation>6</Navigation>
-        </Message>
-        <Message>
-            <ID>35901018</ID>
-            <Severity>1</Severity>
             <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(6): </Dynamic>
             <Dynamic>clk_divider</Dynamic>
             <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv</Navigation>
             <Navigation>6</Navigation>
         </Message>
         <Message>
-            <ID>35902548</ID>
-            <Severity>16</Severity>
-            <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(11): </Dynamic>
-            <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv</Navigation>
-            <Navigation>11</Navigation>
-        </Message>
-        <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
             <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(19): </Dynamic>
             <Dynamic>32</Dynamic>
-            <Dynamic>18</Dynamic>
+            <Dynamic>16</Dynamic>
             <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv</Navigation>
             <Navigation>19</Navigation>
-        </Message>
-        <Message>
-            <ID>35931002</ID>
-            <Severity>16</Severity>
-            <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(12): </Dynamic>
-            <Dynamic>clk</Dynamic>
-            <Navigation>c:/users/hheathwood/desktop/project/fpga_design/source/top.sv</Navigation>
-            <Navigation>12</Navigation>
         </Message>
         <Message>
             <ID>35935047</ID>
@@ -426,11 +622,90 @@
             <Dynamic>s5</Dynamic>
         </Message>
         <Message>
-            <ID>35002065</ID>
-            <Severity>4096</Severity>
-            <Dynamic>c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv</Dynamic>
-            <Dynamic>11</Dynamic>
-            <Dynamic>counter[17:0]</Dynamic>
+            <ID>35001774</ID>
+            <Severity>1</Severity>
+            <Dynamic>\s3/state</Dynamic>
+            <Dynamic>one-hot</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>\s3/state_FSM</Dynamic>
+            <Dynamic>3</Dynamic>
+        </Message>
+        <Message>
+            <ID>35002039</ID>
+            <Severity>1</Severity>
+        </Message>
+    </Task>
+    <Task name="Export">
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>2</Dynamic>
+            <Dynamic>No port matched 'dataOut[2]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>2</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>3</Dynamic>
+            <Dynamic>No port matched 'dataOut[3]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>3</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>4</Dynamic>
+            <Dynamic>No port matched 'dataOut[4]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>6</Dynamic>
+            <Dynamic>No port matched 'dataOut[7]'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>8</Dynamic>
+            <Dynamic>No port matched 'RWout'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>8</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>9</Dynamic>
+            <Dynamic>No port matched 'RSout'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>9</Navigation>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Dynamic>
+            <Dynamic>12</Dynamic>
+            <Dynamic>No port matched 'sysclk'.</Dynamic>
+            <Navigation>C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc</Navigation>
+            <Navigation>12</Navigation>
+        </Message>
+        <Message>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
         </Message>
     </Task>
 </BaliMessageLog>

@@ -1,0 +1,5 @@
+#Start recording tcl command: 11/26/2024 12:47:52
+#Project Location: C:/Users/hheathwood/Desktop/Project/FPGA_Design; Project name: FPGA_Design
+prj_open "C:/Users/hheathwood/Desktop/Project/FPGA_Design/FPGA_Design.rdf"
+prj_run Synthesis -impl impl_1
+#Stop recording: 11/26/2024 12:57:46

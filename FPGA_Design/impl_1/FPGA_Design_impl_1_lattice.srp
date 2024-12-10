@@ -1,3 +1,15 @@
+synthesis:  version Radiant Software (64-bit) 2024.1.0.34.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+Tue Dec 10 11:05:20 2024
+
+
+Command Line:  C:\lscc\radiant\2024.1\ispfpga\bin\nt64\synthesis.exe -f FPGA_Design_impl_1_lattice.synproj -logfile FPGA_Design_impl_1_lattice.srp -gui -msgset C:/Users/hheathwood/Desktop/Project/FPGA_Design/promote.xml 
+
 Synthesis options:
 The -a option is iCE40UP.
 The -t option is SG48.
@@ -62,7 +74,6 @@ Mixed language design
 Verilog design file = C:/lscc/radiant/2024.1/ip/pmi/pmi_iCE40UP.v
 Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/control_FSM.sv
 Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/send_FSM.sv
-Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/sendFSM.sv
 Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_FSM.sv
 Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/SPI_sync_FSM.sv
 Verilog design file = C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/top.sv
@@ -119,10 +130,12 @@ INFO <35901328> - synthesis: c:/lscc/radiant/2024.1/ip/pmi/pmi_ram_dq_be.v(45): 
 INFO <35901328> - synthesis: c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.v(17): analyzing included file c:/lscc/radiant/2024.1/ip/pmi/pmi_dsp.v. VERI-1328
 Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/control_fsm.sv. VERI-1482
 Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/send_fsm.sv. VERI-1482
-Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/sendfsm.sv. VERI-1482
 Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/spi_fsm.sv. VERI-1482
 Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/spi_sync_fsm.sv. VERI-1482
 Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/top.sv. VERI-1482
+WARNING <35901372> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(10): redeclaration of ansi port param is not allowed. VERI-1372
+WARNING <35901372> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(11): redeclaration of ansi port value is not allowed. VERI-1372
+WARNING <35901372> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(12): redeclaration of ansi port SPIDone is not allowed. VERI-1372
 Analyzing Verilog file c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv. VERI-1482
 Analyzing VHDL file c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.vhd
@@ -132,15 +145,11 @@ INFO <35921504> - synthesis: The default VHDL library search path is now "C:/Use
 Top module language type = Verilog.
 Top module name (Verilog, mixed language): top
 INFO <35901018> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(6): compiling module top. VERI-1018
+INFO <35901018> - synthesis: C:/lscc/radiant/2024.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC(CLKHF_DIV=2'b01). VERI-1018
 INFO <35901018> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/spi_fsm.sv(6): compiling module SPI_FSM. VERI-1018
-INFO <35901018> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/control_fsm.sv(6): compiling module control_FSM. VERI-1018
-WARNING <35901330> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(22): actual bit length 8 differs from formal bit length 5 for port paramOut. VERI-1330
 INFO <35901018> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/spi_sync_fsm.sv(6): compiling module SPI_sync_FSM. VERI-1018
-INFO <35901018> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/send_fsm.sv(6): compiling module send_FSM. VERI-1018
 INFO <35901018> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(6): compiling module clk_divider. VERI-1018
-WARNING <35902548> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(11): complement of if-condition matches sensitivity list edge; this does not match standard flip-flop behavior. VERI-2548
-WARNING <35901209> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(19): expression size 32 truncated to fit in target size 18. VERI-1209
-WARNING <35931002> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/top.sv(12): net clk does not have a driver. VDB-1002
+WARNING <35901209> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(19): expression size 32 truncated to fit in target size 16. VERI-1209
                                                          
 
 
@@ -166,4 +175,77 @@ WARNING <35931002> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/
 
 
 WARNING <35935047> - synthesis: Unused instance s5 is removed. VDB-5047
-ERROR <35002065> - synthesis: c:/users/hheathwood/desktop/project/fpga_design/source/clk_divider.sv(11): Register driving counter[17:0] uses non-standard logic which is not synthesizable.
+INFO <35001774> - synthesis: Extracted state machine for register '\s3/state' with one-hot encoding
+State machine has 3 reachable states with original encodings of:
+
+ 00 
+
+ 01 
+
+ 10 
+
+original encoding -> new encoding (one-hot encoding)
+
+ 00 -> 001
+
+ 01 -> 010
+
+ 10 -> 100
+
+
+
+
+CRITICAL <35001747> - synthesis: Bit(s) of register \s3/state_FSM stuck at '0': 3
+INFO <35002039> - synthesis: Special Primitives IFD1P3AZ and OFD1P3AZ for ThunderPlus are synthesized using IOL_B.
+
+################### Begin Area Report (top)######################
+Number of register bits => 49 of 5280 (0 % )
+CCU2 => 17
+FD1P3XZ => 49
+HSOSC_CORE => 1
+IB => 4
+IOL_B => 2
+LUT4 => 48
+OB => 17
+################### End Area Report ##################
+Number of odd-length carry chains : 0
+Number of even-length carry chains : 1
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 2
+  Net : sclk_c, loads : 0
+  Net : int_osc, loads : 0
+Clock Enable Nets
+Number of Clock Enables: 0
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : s3/n357, loads : 34
+  Net : s3/n260, loads : 32
+  Net : SPILoad_c, loads : 19
+  Net : s3/SPIDone_c, loads : 3
+  Net : n261, loads : 3
+  Net : reset_c, loads : 2
+  Net : s3/count[11], loads : 2
+  Net : s3/n371, loads : 2
+  Net : s3/n859, loads : 2
+  Net : s3/count[9], loads : 2
+################### End Clock Report ##################
+
+################### Begin Constraint Report ######################
+Constraint Summary:
+  Total number of constraints: 0
+  Total number of constraints dropped: 0
+###################  End Constraint Report  ######################
+
+################### Begin DRC Report ######################
+Total number of design rule violations: 0
+###################  End DRC Report  ######################
+
+Peak Memory Usage: 86 MB
+
+--------------------------------------------------------------
+Total CPU Time: 1 secs 
+Total REAL Time: 2 secs 
+--------------------------------------------------------------
+Checksum -- synthesis -- netlist: b832c562a5c737a911257d6c45b5f0b0d5d90300

@@ -1,42 +1,29 @@
 DRC: Design Rule Check Radiant Software (64-bit) 2024.1.0.34.2
-Sun Nov 24 19:06:28 2024
+Thu Dec  5 12:01:00 2024
 
-WARNING <71003020> - Top module port 'sysclk' does not connect to anything.
-WARNING <71003020> - Top module port 'SPILoad' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[31]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[30]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[29]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[28]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[27]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[26]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[25]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[24]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[23]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[22]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[21]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[20]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[19]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[18]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[17]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[16]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[15]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[14]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[13]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[12]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[11]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[10]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[9]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[8]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[7]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[6]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[5]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[4]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[3]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[2]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[1]' does not connect to anything.
-WARNING <71003020> - Top module port 'SPIData[0]' does not connect to anything.
-WARNING <71003020> - Top module port 'paramIn[4]' does not connect to anything.
-WARNING <71003020> - Top module port 'paramIn[3]' does not connect to anything.
-WARNING <71003020> - Top module port 'paramIn[2]' does not connect to anything.
-WARNING <71003020> - Top module port 'paramIn[1]' does not connect to anything.
-WARNING <71003020> - Top module port 'paramIn[0]' does not connect to anything.
+WARNING <1027013> - No port matched 'dataOut[0]'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (1) : Can't resolve object 'dataOut[0]' in constraint 'ldc_set_location -site {6} [get_ports {dataOut[0]}]'.
+WARNING <1027013> - No port matched 'dataOut[1]'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (2) : Can't resolve object 'dataOut[1]' in constraint 'ldc_set_location -site {4} [get_ports {dataOut[1]}]'.
+WARNING <1027013> - No port matched 'dataOut[2]'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (3) : Can't resolve object 'dataOut[2]' in constraint 'ldc_set_location -site {48} [get_ports {dataOut[2]}]'.
+WARNING <1027013> - No port matched 'dataOut[3]'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (4) : Can't resolve object 'dataOut[3]' in constraint 'ldc_set_location -site {47} [get_ports {dataOut[3]}]'.
+WARNING <1027013> - No port matched 'dataOut[4]'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (5) : Can't resolve object 'dataOut[4]' in constraint 'ldc_set_location -site {2} [get_ports {dataOut[4]}]'.
+WARNING <1027013> - No port matched 'dataOut[5]'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (6) : Can't resolve object 'dataOut[5]' in constraint 'ldc_set_location -site {13} [get_ports {dataOut[5]}]'.
+WARNING <1027013> - No port matched 'dataOut[7]'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (7) : Can't resolve object 'dataOut[7]' in constraint 'ldc_set_location -site {20} [get_ports {dataOut[7]}]'.
+WARNING <1027013> - No port matched 'enable'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (8) : Can't resolve object 'enable' in constraint 'ldc_set_location -site {3} [get_ports enable]'.
+WARNING <1027013> - No port matched 'RWout'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (9) : Can't resolve object 'RWout' in constraint 'ldc_set_location -site {45} [get_ports RWout]'.
+WARNING <1027013> - No port matched 'RSout'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (10) : Can't resolve object 'RSout' in constraint 'ldc_set_location -site {46} [get_ports RSout]'.
+WARNING <1027013> - No port matched 'sysclk'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (14) : Can't resolve object 'sysclk' in constraint 'ldc_set_port -iobuf {PULLMODE=NA} [get_ports sysclk]'.
+WARNING <1027013> - No port matched 'int_osc'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (25) : Can't resolve object 'int_osc' in constraint 'ldc_set_location -site {21} [get_ports int_osc]'.
+WARNING <1027013> - No port matched 'dataOut[6]'.
+WARNING <1026001> - C:/Users/hheathwood/Desktop/Project/FPGA_Design/source/project_pins.pdc (26) : Can't resolve object 'dataOut[6]' in constraint 'ldc_set_location -site {12} [get_ports {dataOut[6]}]'.
