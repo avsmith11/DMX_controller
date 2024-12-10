@@ -15,11 +15,10 @@
 //  PA2 |   ADC2
 //  PA3 |   ADC3
 //  PA4 |   ADC4
-//  PA5 |   ADC5
-//  PA6 |   ADC6
-//  PA7 |   ADC7
-//  PB0 |   ADC8
-//  PB1 |   ADC9
+//  PA6 |   ADC5
+//  PA7 |   ADC6
+//  PB0 |   ADC7
+//  PB1 |   ADC8
 //  PA9 |   UART1 Tx
 //  PB5 |   SPI1 PICO
 //  PB3 |   SPI1 SCLK
@@ -59,16 +58,17 @@ void main(){
 
     
 
-    while(1){
-        // shift paramValues to lastParamValues
+    while(1){ // MAIN LOOP
         // read ADC
         // cast 12-bit range to 8 bits
-        // send parameters over DMX
         // find what value last changed
+        // send parameters over DMX
         // send parameters to FPGA over SPI
-        // wait 100ms.
-
+        
+        //read ADC
         averageADC(averagedValues);
+
+        // cast ADC values to char size (8 bits)
         sliderValues[0] = uint12_to_char(averagedValues[0]);
         sliderValues[1] = uint12_to_char(averagedValues[1]);
         sliderValues[2] = uint12_to_char(averagedValues[2]);
@@ -79,17 +79,18 @@ void main(){
         sliderValues[7] = uint12_to_char(averagedValues[7]);
         sliderValues[8] = uint12_to_char(averagedValues[8]);
 
+        
         for (int i = 0; i < 9; i++) {
-            printf("slider %u: %u\n", i, sliderValues[i]);
+            printf("slider %u: %u\n", i, sliderValues[i]); // print slider values for debug
 
             if (lastSliderValues[i] != sliderValues[i]){  // check if slider changed
-                activeValue = sliderValues[i];
-                activeParam = i;
+                activeValue = sliderValues[i];            // set activeValue to the value of the changed slider
+                activeParam = i;                          // set activeParam to the slider number
             }
-            lastSliderValues[i] = sliderValues[i]; // send param values to last param values
+            lastSliderValues[i] = sliderValues[i]; // send param values to last param values to enable next round of detection
         }
 
-        // light 1
+        // light 1 (ADDRESS 1) parameter assignments found on Uking ZQ-B147 datasheet
         paramValues[0] = sliderValues[1]; // pan
         paramValues[1] = sliderValues[2]; // tilt
         paramValues[2] = sliderValues[3]; // color
@@ -100,7 +101,7 @@ void main(){
         paramValues[7] = 0;
         paramValues[8] = 0;
         
-        //light 2
+        //light 2 (ADDRESS 13)
         paramValues[12] = sliderValues[6]; // pan
         paramValues[13] = sliderValues[7]; // tilt
         paramValues[14] = sliderValues[8]; // color

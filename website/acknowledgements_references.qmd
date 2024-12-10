@@ -1,0 +1,39 @@
+---
+title: Acknowledgements and References
+---
+
+## Acknowledgements
+
+Prof. Brake - Thank you for facilitating the most learning we’ve ever done in a semester with kindness and compassion and for helping us find components and resources for this project.
+
+Kavi Dey - Thank you for hours upon hours of help in the lab throughout the semester, especially during the project.
+
+Xavier Walter - Thank you for helping us debug, even when it just meant listening to us complain about things not working.
+
+Every MicroPs Student - Thank you for creating and participating in this collaborative environment where there was always someone to lend a helping hand.
+
+Talia Wigder - Thank you for letting us into party storage to ~~steal~~ borrow the moving lights.
+
+Richard Nix (ETSA Standards) - Thank you for pointing us to where to find the DMX standard for free and not $200.
+
+
+
+## References
+
+ANSI E1.11 – 2024 Entertainment Technology—USITT DMX512-A Asynchronous Serial Digital Data Transmission Standard for Controlling Lighting Equipment and Accessories
+<https://tsp.esta.org/tsp/documents/docs/ANSI%20E1.11%20-%202024.pdf>
+
+DMX512
+<https://en.wikipedia.org/wiki/DMX512>
+
+ZQ-B147 Datasheet
+<https://www.uking-online.com/wp-content/uploads/2020/10/ZQ-B147.pdf>
+
+STM32L432KC Datasheet
+<https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf>
+
+STM32L432KC Reference Manual
+<https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf> 
+
+FPGA_Synthesizer (Eli Rejto '24, Kevin Box '24)
+<https://github.com/ERejto/FPGA_Synthesizer/tree/main/MCU>

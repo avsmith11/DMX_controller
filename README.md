@@ -1,4 +1,4 @@
 This Repository contains our code and website metadata for our E155 Final Project at HMC. In this project, the MCU is used to generate a DMX signal given nine analog input sliders and communicate the parameter most recently changed and its value. The FPGA recieves this signal and dispays the number and value of that parameter.
 The MCU code and segger project are found in the MCU folder. The main function is in source, and the library functions we used (some developed for this prorject, some copied from class rersources and previous work) are in the lib folder.
 The systemVerilog and Radiant project for the FPGA are in the FPGA folder. The FPGA was intended to drive an LCD, and the code to interface with the LCD is still present. Although we weren't able to get it working by the due date of this project, we may develop it further in the future.
-Files for the final report website (hosted through gitHub pages) are in the docs folder.
+Files for the final report website (hosted through gitHub pages) are in the website folder.

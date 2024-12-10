@@ -1,0 +1,24 @@
+---
+title: Results
+---
+
+{{< video https://youtu.be/97NrsoAurR8?si=5EXSuO4hXu11_xzj 
+title=’Project Tour’>}}
+
+![Whole System](images/whole_system.jpg)
+
+Our implementation as of the due date of this assignment was mostly successful. The DMX controller worked as intended with no percievable latency, and although the data transmitted to the FPGA was not displayed on an LCD as intended, it was successfully transmitted and received and could be viewed in binary on an LED display.
+
+![FPGA Display](images/FPGA_display.jpg)
+
+To determine the latency of the control board, we measured the time between DMX signals on the oscilloscope. Since the DMX transmission is part of the main loop, a new signal is only sent after all the parameters have been updated.
+
+![Zoomed Out Oscilloscope Trace of DMX signal](images/UART_packets.png)
+
+As you can see from the cursors, the time between transmissions is only 16.5ms, which is too small for people to perceive.
+
+The time from changing a value to it displaying on the FPGA display is roughly the same. The SPI communication occurs at 20MHz, but it only happens once every loop.
+
+The Hardware implementation is quite barebones, though we have plans to improve it outside the timescale of this course. The sliders are mounted to a breadboard as shown below.
+
+![Slider Board](images/slider_board.jpg)
