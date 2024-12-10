@@ -1,3 +1,13 @@
 ---
 title: FPGA Design
 ---
+
+## Overall Design
+
+The FPGA system is responsible for receiving SPI data from the MCU and displaying this data on a 16x2 LCD display. This SPI data contains the DMX parameter number and the current value of the most recently changed parameter. The FPGA then uses a combination of different modules and finite state machines to implement the [LCD protocol](https://electronicsforu.com/technology-trends/learn-electronics/16x2-lcd-pinout-diagram) and display the SPI data visually on the screen. This design was adapted from a previous [E155 Project by Declan O’Neill and Kip Macsai-Goren](https://doneill890.github.io/slide-whistle/)Below is the HDL block diagram.
+
+![FPGA Block Diagram](images/FPGA_Block_Diagram.jpg)
+
+![Send FSM](Send_FSM.jpg)
+![SPI Sync FSM](SPI_Sync_FSM.jpg)
+![Control FSM](Control_FSM.jpg)

@@ -1,7 +1,6 @@
 ---
 title: Documentation
 ---
-
 (GitHub Repository)[https://github.com/avsmith11/DMX_controller]
 ## New Hardware
 
@@ -13,4 +12,8 @@ The linear potentiometers are an example of an analog input, which we had not us
 
 ![MCU Schematic](images/MCU Schematic.png)
 
-FPGA SCHEMATIC
+![FPGA Schematic](images/FPGA_Schematic.jpg)
+
+## Bill of Materials
+
+![Bill of Materials](images/Bill_Of_Materials.jpg)

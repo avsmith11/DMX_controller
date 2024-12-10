@@ -16,8 +16,6 @@ Talia Wigder - Thank you for letting us into party storage to ~~steal~~ borrow t
 
 Richard Nix (ETSA Standards) - Thank you for pointing us to where to find the DMX standard for free and not $200.
 
-
-
 ## References
 
 ANSI E1.11 – 2024 Entertainment Technology—USITT DMX512-A Asynchronous Serial Digital Data Transmission Standard for Controlling Lighting Equipment and Accessories
@@ -25,6 +23,9 @@ ANSI E1.11 – 2024 Entertainment Technology—USITT DMX512-A Asynchronous Seria
 
 DMX512
 <https://en.wikipedia.org/wiki/DMX512>
+
+LCD Protocol
+<https://electronicsforu.com/technology-trends/learn-electronics/16x2-lcd-pinout-diagram> 
 
 ZQ-B147 Datasheet
 <https://www.uking-online.com/wp-content/uploads/2020/10/ZQ-B147.pdf>
@@ -34,6 +35,3 @@ STM32L432KC Datasheet
 
 STM32L432KC Reference Manual
 <https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf> 
-
-FPGA_Synthesizer (Eli Rejto '24, Kevin Box '24)
-<https://github.com/ERejto/FPGA_Synthesizer/tree/main/MCU>
